@@ -1,0 +1,25 @@
+@import "src/app/styles/global";
+
+.recent{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: rgba(0,0,0,0.2);
+  width: 100%;
+  padding: 10px;
+  .atas{
+    display: flex;
+    position: relative;
+    img{
+      width: 200px;
+    }
+    .nama{
+      margin-top: 10px;
+    }
+    .play-hour{
+      position: absolute;
+
+      right: 0;
+      bottom: 0;
+    }
+  }
+}

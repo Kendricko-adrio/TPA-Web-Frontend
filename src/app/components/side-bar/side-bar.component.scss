@@ -1,0 +1,26 @@
+@import "src/app/styles/global";
+
+.side-bar{
+  font-family: $font;
+  img{
+    width: 100%;
+  }
+    .sub-bar{
+        padding: 10px;
+        h3{
+            color: white;
+
+        }
+        ul{
+            li{
+                padding: 10px;
+                list-style: none;
+
+                a{
+                    text-decoration: none;
+                    color: rgb(175, 175, 248);
+                }
+            }
+        }
+    }
+}

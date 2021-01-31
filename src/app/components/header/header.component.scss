@@ -1,0 +1,81 @@
+@import "src/app/styles/global";
+
+$padding: 0 10px 0 10px;
+
+.header {
+  font-family: $font;
+  background-color: #171a21;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  color: $font-color;
+
+  img {
+    width: 300px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .nav {
+    ul {
+      display: flex;
+
+      li {
+        padding: 10% 20px 10% 20px;
+
+        list-style: none;
+
+        a {
+          text-decoration: none;
+          color: $font-color;
+        }
+      }
+    }
+  }
+
+  .right {
+    display: flex;
+    padding: 10px;
+
+    &-install {
+      padding: $padding;
+    }
+
+    &-name {
+      padding: $padding;
+      position: relative;
+      ul{
+        position: absolute;
+        left: 0;
+        margin-top: 10px;
+        background-color: black;
+        display: none;
+        li{
+          display: flex;
+          padding: 10px;
+          justify-content: center;
+          align-content: center;
+          a{
+            font-family: $font;
+            text-decoration: none;
+            color: $font-color;
+          }
+        }
+
+      }
+
+    }
+
+    &-name:hover{
+      ul{
+        display: block;
+      }
+    }
+    img {
+      padding: 0;
+      width: 32px;
+      height: 32px;
+    }
+  }
+}

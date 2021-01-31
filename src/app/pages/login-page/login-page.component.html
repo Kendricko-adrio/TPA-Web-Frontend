@@ -1,0 +1,54 @@
+<div >
+
+    <app-header></app-header>
+<div class="login">
+    <div class="login-form">
+        <h2>SIGN IN</h2>
+        <div>{{username}}{{password}}</div>
+        <form action="" #loginform='ngForm' (ngSubmit)="submit()">
+            <div class="component">
+                <p>Steam account name</p>
+                <input id="id" type="text"[(ngModel)]="username" [ngModelOptions]="{standalone: true}" ngModel name="id">
+            </div>
+            <div class="component">
+                <p>Steam account name</p>
+                <input id="pass" type="password" [(ngModel)]="password" [ngModelOptions]="{standalone: true}" name="pass">
+            </div>
+            <div class="component">
+                <input type="checkbox" ngModel name="cb">
+                <label for=""> remember me on this computer</label>
+            </div>
+            <input type="submit" id="submit" >
+
+        </form>
+
+        <div class="choice">
+
+            <a (click)="signInWithGoogle()">
+                <div>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/768px-Google_%22G%22_Logo.svg.png" alt="">
+                    <p>&nbsp; &nbsp; Google</p>
+                </div>
+            </a>
+
+            <a routerLink="/register">
+                <div>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Steam_icon_logo.svg/512px-Steam_icon_logo.svg.png" alt="">
+                    <p>&nbsp; &nbsp; Create Account</p>
+                </div>
+            </a>
+        </div>
+
+        <!-- <button>Login w/ google </button> -->
+    </div>
+    <div class="login-stream">
+        Stream
+        <div *ngIf="user">
+            <h1>{{user.name}}</h1>
+        </div>
+        <div *ngIf="!user">
+            <h1>No User</h1>
+        </div>
+    </div>
+</div>
+</div>

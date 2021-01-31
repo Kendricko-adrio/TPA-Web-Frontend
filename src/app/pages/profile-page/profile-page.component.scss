@@ -1,0 +1,47 @@
+@import "src/app/styles/global";
+
+.container{
+  padding: 10px;
+}
+
+.profile{
+  min-height: 100vh;
+    background-color: $back-color;
+  .main{
+
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    &-content{
+      padding: 20px;
+      font-family: $font;
+      color: $font-color;
+      background-color: #15004a;
+      height: 100%;
+      width: 90%;
+      margin: 30px;
+      .two-side{
+        display: flex;
+        .left{
+
+          width: 70%;
+          .recent{
+            background-color: rgba(0,0,0,0.2);
+            font-size: 25px;
+            padding: 10px;
+          }
+          app-recent-game{
+            margin-top: 100px;
+          }
+        }
+        .right{
+          background-color: rgba(0,0,0,0.2);
+          margin-left: 15px;
+          width: 30%;
+        }
+      }
+    }
+  }
+}

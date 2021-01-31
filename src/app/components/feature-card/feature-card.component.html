@@ -1,0 +1,21 @@
+
+<div class="card">
+    <h4>FEATURED & RECOMMENDED</h4>
+    
+
+    <div  *ngFor="let g of games;let j = index">
+        <div class="feature" #test>
+            <img src="{{g.Image}}" alt="" >
+            <div class="feature-components">
+                <div>{{g.Name}}</div>
+                <div>{{g.Description}}</div>
+                <div>{{g.Price}}</div>
+                
+            </div>
+        </div>
+    
+    </div>
+    <button>test</button>
+    
+</div>
+

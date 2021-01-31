@@ -1,0 +1,39 @@
+@import "src/app/styles/global";
+
+.text{
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.head {
+  font-family: $font;
+  color: $font-color;
+  display: flex;
+  //padding: 20px;
+  &-left {
+    //background-color: #072d4b;
+    width: 70%;
+    display: flex;
+    img {
+      height: 200px;
+      margin: 10px;
+    }
+    .content-text{
+      margin: 10px;
+      display: flex;
+      flex-direction: column;
+      //justify-content;
+      &-description{
+        margin-top: 30px;
+      }
+    }
+  }
+  &-right{
+    //background-color: #072d4b;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+
+  }
+}

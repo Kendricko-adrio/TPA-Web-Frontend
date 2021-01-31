@@ -1,0 +1,22 @@
+div{
+    background-color: #072d4b;
+    height: 100%;
+    .main{
+        display: flex;
+        app-side-bar{
+            min-width: 220px;
+            margin: 20px;
+            width: 20%;
+            height: 100%;
+            //background-color: rgb(238, 223, 223, 0.2);
+        }
+        .home-page{
+
+            margin: 20px;
+            width: 80%;
+            // height: 100%;
+            height: 100%;
+            //background-color: rgb(238, 223, 223, 0.2);
+        }
+    }
+}
