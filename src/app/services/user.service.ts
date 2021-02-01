@@ -24,7 +24,7 @@ export class UserService {
       query: gql`
       query getAuth{
   getAuthUser{
-    ID,
+    userID,
     userName,
     password,
     FirstName,
@@ -46,7 +46,7 @@ export class UserService {
       query: gql`
       query getAuth{
         getAuthUser{
-          ID,
+          userID,
           userName,
           password,
           FirstName,
@@ -63,7 +63,7 @@ export class UserService {
       mutation: gql`
       mutation logOutUser($username: String!){
   logoutUser(username: $username){
-    ID,
+    userID,
     userName,
     FirstName
   }
@@ -85,7 +85,7 @@ export class UserService {
       query: gql`
       query getUserByUsername($username: String!){
           getUser(input:{Email: $username}){
-             ID,
+             userID,
               userName,
               FirstName,
               LastName,
@@ -110,7 +110,7 @@ export class UserService {
       mutation: gql`
       mutation createUser($firstname: String!, $lastname: String!, $authToken: String!, $email: String!, $idToken: String!, $photo: String!, $provider: Int!){
         createUser(input:{FirstName: $firstname, LastName: $lastname, AuthToken: $authToken, Email:$email, IdToken:$idToken, PhotoUrl: $photo, ProviderId: $provider}){
-          ID,
+          userID,
           FirstName
         }
       }
@@ -138,7 +138,7 @@ export class UserService {
       mutation: gql`
       mutation createAccount($email: String!, $countryId: Int!){
         createAccount(input:{email: $email, countryId: $countryId}){
-          ID,
+          userID,
           Email
         }
       }
