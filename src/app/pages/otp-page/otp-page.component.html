@@ -2,22 +2,22 @@
 <div class="otp">
     <app-header></app-header>
 
-    
+
     <div class="otp-form">
         <H2>CREATE YOUR ACCOUNT </H2>
         <!-- <h3>{{errorMsg}}</h3> -->
-        <div>{{username}} {{password}} {{confirmPass}} {{otp}}</div>
+<!--        <div>{{username}} {{password}} {{confirmPass}} {{otp}}</div>-->
         <form action="" (ngSubmit)="submit()" >
             <div class="component">
                 <p>Account Name</p>
                 <input type="text" [(ngModel)]="username" [ngModelOptions]="{standalone: true}">
             </div>
-            
+
             <div class="component">
                 <p>Password</p>
                 <input type="password" [(ngModel)]="password" [ngModelOptions]="{standalone: true}" >
             </div>
-            
+
             <div class="component">
                 <p>Confirm Password</p>
                 <input type="password" [(ngModel)]="confirmPass" [ngModelOptions]="{standalone: true}" >
