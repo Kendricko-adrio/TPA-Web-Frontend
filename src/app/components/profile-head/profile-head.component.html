@@ -6,10 +6,10 @@
         {{user.userName}}
       </div>
       <div class="content-text-name text">
-        untuk namanya
+        {{user.realName}}
       </div>
       <div class="content-text-description">
-        untuk description
+        {{user.summary}}
       </div>
     </div>
   </div>
@@ -21,7 +21,8 @@
       untuk feature badge
     </div>
     <div class="text">
-      edit profile
+      <button (click)="editProfile()">edit profile</button>
     </div>
+
   </div>
 </div>

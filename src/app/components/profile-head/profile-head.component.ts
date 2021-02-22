@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {ActivatedRoute, Router, RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-profile-head',
@@ -7,10 +8,17 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class ProfileHeadComponent implements OnInit {
 
-  constructor() {
+  constructor(
+    private router: Router) {
   }
 
   @Input() user: any;
+  destination: string;
+  editProfile(): void{
+    this.destination = 'user/' + this.user.userName + '/edit';
+    this.router.navigate([this.destination]);
+    console.log(this.user);
+  }
 
   ngOnInit(): void {
   }

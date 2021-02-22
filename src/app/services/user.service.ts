@@ -11,8 +11,7 @@ import {AuthUser} from '../models/auth-user';
 })
 export class UserService {
 
-  public static userAuth: Observable<any>;
-  public static loaded: Promise<boolean>;
+  public static userAuth: any;
 
   constructor(
     private apollo: Apollo,
@@ -25,6 +24,7 @@ export class UserService {
       query getAuth{
   getAuthUser{
     userID,
+    role,
     userName,
     password,
     FirstName,
@@ -35,6 +35,7 @@ export class UserService {
       Description,
       Image
     }
+    customUrl
   }
 }
       `
@@ -51,15 +52,54 @@ export class UserService {
           password,
           FirstName,
           LastName,
-          PhotoUrl
+          PhotoUrl,
+          customUrl
         }
       }
       `
     }).toPromise();
   }
 
-  setLogOutUser(username) {
+  getAuthUser3(): Observable<Query> {
+    return this.apollo.query<Query>({
+      query: gql`
+      query getAuth{
+        getAuthUser{
+          userID,
+          userName,
+          password,
+          FirstName,
+          LastName,
+          PhotoUrl
+        }
+      }
+      `
+    });
+  }
+
+  updateAvatar(imageUrl): void{
     this.apollo.mutate({
+      mutation: gql`
+      mutation updateImageUrl($imageUrl : String!){
+  updateImage(imageUrl: $imageUrl){
+    PhotoUrl
+  }
+}
+      `,
+      variables: {
+        imageUrl: imageUrl
+      }
+    }).subscribe(({data}) => {
+      console.log('got data', data);
+      return true;
+    }, (error) => {
+      console.log('there was an error sending the query', error);
+      return false;
+    });
+  }
+
+  setLogOutUser(username): any {
+    return this.apollo.mutate({
       mutation: gql`
       mutation logOutUser($username: String!){
   logoutUser(username: $username){
@@ -73,10 +113,6 @@ export class UserService {
         username
 
       }
-    }).subscribe(({data}) => {
-      console.log('got data', data);
-    }, (error) => {
-      console.log('there was an error sending the query', error);
     });
   }
 
@@ -84,16 +120,23 @@ export class UserService {
     return this.apollo.query<Query>({
       query: gql`
       query getUserByUsername($username: String!){
-          getUser(input:{Email: $username}){
-             userID,
-              userName,
-              FirstName,
-              LastName,
-              Email,
-              PhotoUrl,
-              games{
+  getUser(input:{Email: $username}){
+    userID,
+    userName,
+    FirstName,
+    LastName,
+    Email,
+    PhotoUrl,
+    realName,
+    customUrl,
+    CountryId,
+    hideAward,
+    summary,
+    hideAward,
+    games{
       Name,
       Description,
+      Price,
       Image
     }
   }
@@ -102,6 +145,86 @@ export class UserService {
       variables: {
         username
       }
+    });
+  }
+
+  getAdmin(username, password){
+    return this.apollo.query<Query>({
+      query: gql `
+      query getAdmin($username: String! $password: String!){
+  getAdmin(username: $username, password: $password){
+    userID,
+    role,
+    userName
+  }
+}
+      `,
+      variables: {
+        password : password,
+        username: username
+      }
+    });
+  }
+
+  getUserByLink(customUrl): Observable<Query> {
+    return this.apollo.query<Query>({
+      query: gql`
+      query getUserByLink($customUrl: String!){
+  getUserByLink(customUrl: $customUrl){
+    userID,
+    userName,
+    FirstName,
+    LastName,
+    Email,
+    PhotoUrl,
+    realName,
+    customUrl,
+    CountryId,
+    hideAward,
+    summary,
+    hideAward,
+    games{
+      Name,
+      Description,
+      Price,
+      Image
+    }
+  }
+}
+      `,
+      variables: {
+        customUrl: customUrl
+      }
+    });
+  }
+
+
+  updateGeneral(profileName, realName, customUrl, countryId, summary, hideAward): any {
+    this.apollo.mutate({
+      mutation: gql`
+      mutation update($profileName: String! $realName: String! $customUrl: String! $countryId: Int! $summary: String! $hideAward: Boolean!){
+  updateGeneral(profileName: $profileName, realName: $realName, customUrl: $customUrl, countryId: $countryId, summary: $summary, hideAward: $hideAward){
+    userID,
+    userName,
+    customUrl,
+    hideAward,
+    summary
+  }
+}
+      `, variables: {
+        profileName: profileName,
+        realName: realName,
+        customUrl: customUrl,
+        countryId: countryId,
+        summary: summary,
+        hideAward: hideAward
+      }
+    }).subscribe(({data}) => {
+      console.log('got data', data);
+      return true;
+    }, (error) => {
+      console.log('there was an error sending the query', error);
+      return false;
     });
   }
 
@@ -175,27 +298,41 @@ export class UserService {
     });
   }
 
-  loginUser(usernames, passwords): boolean {
-    this.apollo.mutate({
+  loginUser(usernames, passwords): any {
+    return this.apollo.mutate({
       mutation: gql`
       mutation login($username: String!, $password: String!){
-        loginUser(input:{username: $username, password: $password})
-      }
+  loginUser(input:{username: $username, password: $password}){
+    userID,
+    userName,
+    password,
+    FirstName,
+    LastName,
+    PhotoUrl,
+    games{
+      Name,
+      Description,
+      Image
+    }
+    customUrl
+  }
+}
       `,
       variables: {
         username: usernames,
         password: passwords
 
       }
-    }).subscribe(data => {
-      console.log('got data', data);
-      return true;
-    }, (error) => {
-      console.log('there was an error sending the query', error);
-      return false;
     });
+    //   .subscribe(data => {
+    //   console.log('got data', data);
+    //
+    // }, (error) => {
+    //   console.log('there was an error sending the query', error);
+    //
+    // });
 
-    return false;
+    // return false;
   }
 
   // getUserAuth(): any{

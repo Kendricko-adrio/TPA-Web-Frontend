@@ -1,0 +1,25 @@
+@import "src/app/styles/global";
+
+.game{
+  background-color: red;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-self: center;
+  &-image{
+    img{
+      width: 150px;
+    }
+  }
+  &-name{
+    width: 50%;
+    align-self: center;
+  }
+  &-price{
+    align-self: center;
+  }
+}
+
+.padding-box{
+  padding: 20px;
+}

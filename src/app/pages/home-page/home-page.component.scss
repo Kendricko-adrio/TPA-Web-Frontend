@@ -1,5 +1,6 @@
+@import "src/app/styles/global";
 div{
-    background-color: #072d4b;
+    background-color: $back-color;
     height: 100%;
     .main{
         display: flex;

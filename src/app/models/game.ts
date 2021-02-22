@@ -1,8 +1,11 @@
 export class Game {
-    id:number
-    name:string
-    description:string
-    price:number
-    rating:number
-    image:string
+  ID: number;
+  Name: string;
+  Description: string;
+  Price: number;
+  Rating: number;
+  Image: string;
+  imageBanner: string;
+  tag: string;
+  systemRequirement: string;
 }

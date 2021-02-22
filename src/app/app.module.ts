@@ -20,6 +20,24 @@ import {OtpPageComponent} from './pages/otp-page/otp-page.component';
 import {ProfilePageComponent} from './pages/profile-page/profile-page.component';
 import {ProfileHeadComponent} from './components/profile-head/profile-head.component';
 import {RecentGameComponent} from './components/recent-game/recent-game.component';
+import { EditProfileComponent } from './pages/edit-profile/edit-profile.component';
+import { EditGeneralComponent } from './components/edit-general/edit-general.component';
+import { EditAvatarComponent } from './components/edit-avatar/edit-avatar.component';
+import { EditProfileBackgroundComponent } from './components/edit-profile-background/edit-profile-background.component';
+import { EditMiniProfileComponent } from './components/edit-mini-profile/edit-mini-profile.component';
+import {AngularFireModule} from '@angular/fire';
+import {environment} from '../environments/environment';
+import {AngularFireStorageModule} from '@angular/fire/storage';
+import {AngularFireDatabaseModule} from '@angular/fire/database';
+import { ProfileSidebarComponent } from './components/profile-sidebar/profile-sidebar.component';
+import { AdminLoginComponent } from './pages/admin-login/admin-login.component';
+import { ManageGameComponent } from './pages/manage-game/manage-game.component';
+import { GetAllgamePaginateComponent } from './components/get-allgame-paginate/get-allgame-paginate.component';
+import { GameCardComponent } from './components/game-card/game-card.component';
+import {InsertGameComponent} from './pages/insert-game/insert-game.component';
+
+
+
 
 
 @NgModule({
@@ -36,6 +54,17 @@ import {RecentGameComponent} from './components/recent-game/recent-game.componen
     ProfilePageComponent,
     ProfileHeadComponent,
     RecentGameComponent,
+    EditProfileComponent,
+    EditGeneralComponent,
+    EditAvatarComponent,
+    EditProfileBackgroundComponent,
+    EditMiniProfileComponent,
+    ProfileSidebarComponent,
+    AdminLoginComponent,
+    ManageGameComponent,
+    GetAllgamePaginateComponent,
+    GameCardComponent,
+    InsertGameComponent,
 
   ],
   imports: [
@@ -46,7 +75,11 @@ import {RecentGameComponent} from './components/recent-game/recent-game.componen
     FormsModule,
     ReactiveFormsModule,
     Ng2CarouselamosModule,
-    RecaptchaModule
+    RecaptchaModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireStorageModule,
+    AngularFireDatabaseModule,
+    ReactiveFormsModule,
   ],
   providers: [
     {

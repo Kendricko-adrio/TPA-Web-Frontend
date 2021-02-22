@@ -1,0 +1,47 @@
+@import '../../styles/global.scss';
+.avatar{
+  &-content{
+    display: flex;
+    &-display{
+      width: 70%;
+    }
+    &-upload{
+      width:30%;
+      font-size: 14px;
+      input{
+        width: 100%;
+        height: 40px;
+        background-color: rgba(0,0,0,0.2);
+        color: $font-color;
+      }
+    }
+
+  }
+  .myavatar{
+    width: 100%;
+    padding: 20px;
+    background-color: rgba(0,0,0,0.3);
+    position: relative;
+    height: 100px;
+    margin: 10px 0 10px 0;
+
+    .seeall{
+      position: absolute;
+    }
+  }
+}
+
+.img{
+  &-big{
+    width: 184px;
+    margin-left: 20px;
+  }
+  &-med{
+    width: 64px;
+    margin-left: 20px;
+  }
+  &-small{
+    width: 32px;
+    margin-left: 20px;
+  }
+}

@@ -29,11 +29,16 @@
     <div class="right-name">
       {{userAuth.userName}}
       <ul>
-        <li><a routerLink="user/{{userAuth.userName}}">View Profile</a></li>
+
+        <li><a routerLink="user/{{userAuth.customUrl}}">View Profile</a></li>
         <li><a>Account Details</a></li>
         <li (click)="logOut()"><a routerLink="/">LogOut: {{userAuth.userName}}</a></li>
         <li><a>Preferences</a></li>
         <li><a>Change Language</a></li>
+        <li *ngIf="userAuth.role == 'admin'"><a routerLink="admin/manage-game">Manage Game</a></li>
+        <li *ngIf="userAuth.role == 'admin'"><a>Manage Promo</a></li>
+        <li *ngIf="userAuth.role == 'admin'"><a>Manage User</a></li>
+
       </ul>
     </div>
     <div class="right-photo">

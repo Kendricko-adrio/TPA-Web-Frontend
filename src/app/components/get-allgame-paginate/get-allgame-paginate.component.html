@@ -1,0 +1,10 @@
+<div class="content">
+  <div class="all-game" *ngFor="let game of games">
+    <app-game-card [gameCurr]="gameCurr" [game]="game" [gameName]="game.Name" [gamePrice]="game.Price" [image]="game.Image"></app-game-card>
+  </div>
+
+  <span *ngFor="let c of pages ; let i = index" >
+    <span style="cursor: pointer" #page id="{{i + 1}}" (click)="changePage(page.id)">{{c}}</span>
+  </span>
+
+</div>

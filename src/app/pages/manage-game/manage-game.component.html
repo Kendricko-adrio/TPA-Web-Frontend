@@ -1,0 +1,9 @@
+<div class="manage-game">
+  <app-header></app-header>
+  <button routerLink="insert">Insert Game</button>
+  <div class="main-content">
+      <app-get-allgame-paginate [games]="games" [pages]="pages" [gameCurr]="gameCurr"></app-get-allgame-paginate>
+
+  </div>
+  <div (click)="test()">test</div>
+</div>

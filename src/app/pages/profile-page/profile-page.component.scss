@@ -6,7 +6,8 @@
 
 .profile{
   min-height: 100vh;
-    background-color: $back-color;
+  @include backgroundGradient;
+    //background-color: $back-color;
   .main{
 
     height: 100%;

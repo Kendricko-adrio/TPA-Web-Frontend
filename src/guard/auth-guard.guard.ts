@@ -19,7 +19,7 @@ export class AuthGuardGuard implements CanActivate {
 
   canActivate(
     route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): Promise<boolean>{
+    state: RouterStateSnapshot): Promise<boolean> {
     // return new Promise((resolve, reject) => {
     //   this.userService.getAuthUser().subscribe(async data => {
     //     console.log('asdf');
@@ -35,6 +35,8 @@ export class AuthGuardGuard implements CanActivate {
     return new Promise((resolve => {
       this.userService.getAuthUser2().then(() => {
         resolve(false);
+        // console.log('ga masuk');
+        this.router.navigate(['/']);
       }).catch(() => {
         resolve(true);
       });

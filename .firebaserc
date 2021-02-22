@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "staem-a0b09": {
+      "hosting": {
+        "Staem": [
+          "staem-a0b09"
+        ]
+      }
+    }
+  }
+}

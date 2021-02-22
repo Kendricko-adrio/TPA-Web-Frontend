@@ -1,0 +1,39 @@
+<!--<p>insert-game works!</p>-->
+
+<div class="main">
+  <app-header></app-header>
+  <div class="insert-content">
+<!--    <div>{{game.Name}}</div>-->
+    <form class="form" action="" (ngSubmit)="onSubmit()">
+      <div class="form-component">
+        <div>Game Title</div>
+        <input [(ngModel)]="game.Name" [ngModelOptions]="{standalone: true}" type="text">
+      </div>
+      <div class="form-component">
+        <div>Game Description</div>
+        <input [(ngModel)]="game.Description" [ngModelOptions]="{standalone: true}" type="text">
+      </div>
+      <div class="form-component">
+        <div>Game Price</div>
+        <input [(ngModel)]="game.Price" [ngModelOptions]="{standalone: true}" type="text">
+      </div>
+      <div class="form-component">
+        <div>Game Banner</div>
+        <input type="file" formControlName="imageUrl" accept="image/*" >
+      </div>
+      <div class="form-component">
+        <div>Game Slide Shows</div>
+        <input type="file" formControlName="imageUrl" accept="image/*" >
+      </div>
+      <div class="form-component">
+        <div>Game Tags</div>
+        <input [(ngModel)]="game.tag" [ngModelOptions]="{standalone: true}" type="text">
+      </div>
+      <div class="form-component">
+        <div>Game System Requirement</div>
+        <input [(ngModel)]="game.systemRequirement" [ngModelOptions]="{standalone: true}" type="text">
+      </div>
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+</div>

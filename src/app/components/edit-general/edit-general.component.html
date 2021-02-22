@@ -1,0 +1,71 @@
+<div class="general">
+  <div>
+    About
+  </div>
+  <div>
+    Set your profile name and details. Providing additional information like your real name can help friends find you on
+    the Steam Community.
+  </div>
+  <div>
+    Your profile name and avatar represent you throughout Steam, and must be appropriate for all audiences. Please see
+    the FAQ for more details.
+  </div>
+
+  <div>{{profileName}}</div>
+  <div>realname : {{realName}}</div>
+  <div>customUrl : {{customUrl}}</div>
+  <div>summary : {{summary}}</div>
+  <div>hideAward : {{hideAward}}</div>
+  <form action="" (ngSubmit)="submit()">
+    <div>
+      General
+      <hr>
+    </div>
+      <div class="form-component">
+        <p>PROFILE NAME</p>
+        <input type="text" [(ngModel)]="profileName" name="first">
+      </div>
+    <div class="form-component">
+      <p>Real Name</p>
+      <input type="text" [(ngModel)]="realName" [ngModelOptions]="{standalone: true}">
+    </div>
+    <div class="form-component">
+      <p>Custom URL</p>
+      <input type="text" [(ngModel)]="customUrl" [ngModelOptions]="{standalone: true}">
+      Your profile will be available at:
+    </div>
+    <div>
+      Location
+      <hr>
+    </div>
+    <div class="form-component">
+      <p>Country(?)</p>
+      <select [(ngModel)]="countryId" [ngModelOptions]="{standalone: true}">
+        <option>No Country</option>
+        <option *ngFor="let c of country; let j = index" value="{{j+1}}">{{c.Name}}</option>
+      </select>
+<!--      <input type="">-->
+    </div>
+    <div>
+      Summary
+      <hr>
+    </div>
+    <div class="form-component">
+      <p>Summary</p>
+      <textarea [(ngModel)]="summary" [ngModelOptions]="{standalone: true}"></textarea>
+    </div>
+
+    <div>
+      PROFILE PREFERENCES
+      <hr>
+    </div>
+    <div class="form-checkbox">
+<!--      <p>Real Name</p>-->
+      <input type="checkbox" [(ngModel)]="hideAward" [ngModelOptions]="{standalone: true}" >
+      Hide Community Awards on my profile
+    </div>
+
+    <input type="submit" value="Save">
+    <input type="submit" value="Cancel">
+  </form>
+</div>

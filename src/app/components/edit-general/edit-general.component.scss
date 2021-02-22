@@ -1,0 +1,41 @@
+@import '../../styles/global.scss';
+
+.general{
+  width: 100%;
+  font-family: $font;
+  form{
+    .form-component{
+      padding: 20px;
+      width: 100%;
+      //background-color: #072d4b;
+      input{
+        width: 100%;
+        height: 40px;
+        font-size: 20px;
+        color: $font-color;
+        background-color: rgba( 0, 0, 0, 0.2 );
+      }
+
+      select{
+        width: 100%;
+        height: 40px;
+        font-size: 20px;
+        color: $font-color;
+        background-color: rgba( 0, 0, 0, 0.2 );
+      }
+      textarea{
+        width: 100%;
+        height: 40px;
+        font-size: 20px;
+        color: $font-color;
+        background-color: rgba( 0, 0, 0, 0.2 );
+      }
+
+    }
+    input[type=submit]{
+      width: 100px;
+      background-color: rgba( 0, 0, 0, 0.2 );
+      color: $font-color;
+    }
+  }
+}

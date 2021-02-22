@@ -1,0 +1,30 @@
+<!--<p>admin-login works!</p>-->
+<app-header></app-header>
+
+<div class="admin-login">
+  <div class="login-form">
+    <h2>SIGN IN</h2>
+    <!--        <div>{{username}}{{password}}</div>-->
+    <form action="" #loginform='ngForm' (ngSubmit)="submit()">
+      <div class="component">
+        <p>Steam account name</p>
+        <input id="id" type="text" [(ngModel)]="username" [ngModelOptions]="{standalone: true}" ngModel name="id">
+      </div>
+      <div class="component">
+        <p>Steam account name</p>
+        <input id="pass" type="password" [(ngModel)]="password" [ngModelOptions]="{standalone: true}" name="pass">
+      </div>
+      <div class="component">
+        <input type="checkbox" ngModel name="cb">
+        <label for=""> remember me on this computer</label>
+      </div>
+      <input type="submit" id="submit">
+      <div>{{errMsg}}</div>
+    </form>
+
+
+    <!-- <button>Login w/ google </button> -->
+  </div>
+
+
+</div>

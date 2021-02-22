@@ -1,0 +1,68 @@
+@import '../../styles/global.scss';
+
+.edit{
+  font-family: $font;
+  color: $font-color;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  //background-color: #2d2b2b;
+  @include backgroundGradient();
+  height: 100%;
+  min-height: calc(100vh - 95px);
+  .main-content{
+    width: 80%;
+    height: 100%;
+    //background-color: red;
+    .header{
+      padding: 20px;
+      display: flex;
+      background-color: grey;
+      img{
+        width: 200px;
+        height: 100%;
+      }
+      .name{
+        margin-top: 20px;
+        margin-left:30px;
+      }
+    }
+    .edit{
+      margin-top: 30px;
+      &-tab{
+        ul{
+          li{
+            list-style: none;
+            padding: 15px;
+            width: 200px;
+            button{
+              height: 100%;
+              width: 100%;
+              text-align: left;
+              color: $font-color;
+              background-color: transparent;
+              border: none;
+              cursor: pointer;
+              overflow: hidden;
+            }
+            //background-color: red;
+          }
+        }
+      }
+      &-content{
+        width: 100%;
+      }
+    }
+
+
+  }
+}
+
+.selected{
+  display: flex;
+}
+.unselected{
+
+  display: none;
+}
+

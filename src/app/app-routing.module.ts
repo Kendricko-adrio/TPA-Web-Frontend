@@ -6,11 +6,20 @@ import {NgModule, Component} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 import {AuthGuardGuard} from '../guard/auth-guard.guard';
 import {ProfilePageComponent} from './pages/profile-page/profile-page.component';
+import {EditProfileComponent} from './pages/edit-profile/edit-profile.component';
+import {WaitProfileGuard} from '../guard/wait-profile.guard';
+import {GetAuthGuard} from '../guard/get-auth.guard';
+import {AdminLoginComponent} from './pages/admin-login/admin-login.component';
+import {ManageGameComponent} from './pages/manage-game/manage-game.component';
+import {InsertGameComponent} from './pages/insert-game/insert-game.component';
+
+
 
 const routes: Routes = [
   {
     path: '',
-    component: HomePageComponent
+    component: HomePageComponent,
+    canActivate: [GetAuthGuard]
   },
   {
     path: 'login',
@@ -20,7 +29,7 @@ const routes: Routes = [
   {
     path: 'register',
     component: RegisterPageComponent,
-    canActivate: [AuthGuardGuard]
+    canActivate: [AuthGuardGuard],
   },
   {
     path: 'register/otp',
@@ -29,8 +38,28 @@ const routes: Routes = [
   },
   {
     path: 'user/:username',
-    component: ProfilePageComponent
+    component: ProfilePageComponent,
+    canActivate: [GetAuthGuard]
   },
+  {
+    path: 'user/:username/edit',
+    component: EditProfileComponent,
+    canActivate: [WaitProfileGuard]
+  },
+  {
+    path: 'login/admin',
+    component: AdminLoginComponent,
+  },
+  {
+    path: 'admin/manage-game',
+    component: ManageGameComponent,
+    canActivate: [GetAuthGuard]
+  },
+  {
+    path: 'admin/manage-game/insert',
+    component: InsertGameComponent,
+    canActivate: [GetAuthGuard]
+  }
 ];
 
 @NgModule({

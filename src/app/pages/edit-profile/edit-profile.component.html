@@ -1,0 +1,44 @@
+<app-header></app-header>
+<div class="edit">
+  <div class="main-content">
+    <div class="header">
+      <img src="{{user.PhotoUrl}}" alt="">
+      <div class="name">{{user.userName}}</div>
+    </div>
+    <div class="edit">
+      <div class="edit-tab">
+        <ul>
+          <li>
+            <button
+              #buttonHome
+              type="button general-button"
+              (click)="updateId='U-001'; onClick(buttonHome.id)"
+              id="button1"
+            >General
+            </button>
+          </li>
+          <li>
+            <button
+              #buttonAvatar
+              type="button general-button"
+              (click)="updateId='U-002'; onClick(buttonAvatar.id)"
+              id="button2"
+            >Avatar
+            </button>
+          </li>
+          <li>Profile Background</li>
+          <li>Mini Profile</li>
+          <li>Theme</li>
+          <li>Featured Badge</li>
+          <li>Favorite Group</li>
+        </ul>
+      </div>
+      <div class="edit-content">
+        <app-edit-general
+          [ngClass]="buttons.button1? 'selected' : 'unselected'"></app-edit-general>
+        <app-edit-avatar [ngClass]="buttons.button2? 'selected' : 'unselected'"></app-edit-avatar>
+        <!--        <app-edit-profile-background></app-edit-profile-background>-->
+      </div>
+    </div>
+  </div>
+</div>

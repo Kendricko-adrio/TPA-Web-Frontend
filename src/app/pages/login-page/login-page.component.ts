@@ -17,10 +17,11 @@ export class LoginPageComponent implements OnInit {
               private route: Router
     , private userService: UserService) {
   }
-
+  errMsg;
   user: SocialUser;
   username: '';
   password: '';
+  isUserFound = false;
 
   signInWithGoogle(): any {
     this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
@@ -31,19 +32,20 @@ export class LoginPageComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.authService.authState.subscribe((user) => {
-      this.user = user;
-      if (this.user) {
-        this.userService.insertUser(this.user.firstName, this.user.lastName, this.user.authToken, this.user.email, this.user.idToken, this.user.photoUrl, 1);
-        console.log(this.user);
-        this.route.navigate(['/']);
-      }
-    });
+
   }
 
   submit() {
-    this.userService.loginUser(this.username, this.password);
-    this.route.navigate(['/']);
+    this.isUserFound = this.userService.loginUser(this.username, this.password).subscribe(data => {
+        console.log('got data', data);
+        UserService.userAuth = data.data.loginUser;
+        this.route.navigate(['/']);
+      }, (error) => {
+        console.log('there was an error sending the query', error);
+        this.errMsg = 'email or pass wrong';
+      });
+    // console.log(this.isUserFound);
+    // this.route.navigate(['/']);
   }
 
 }

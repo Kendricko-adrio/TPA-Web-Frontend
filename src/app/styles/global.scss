@@ -1,3 +1,27 @@
 $back-color : #072d4b;
 $font-color : #b8b6b4;
 $font : "Motiva Sans", Sans-serif;
+
+@mixin backgroundGradient(){
+  background: linear-gradient(
+      180deg
+    , #262D33 -3.38%, #1D1E20 78.58%);
+  background-image: linear-gradient(rgb(38, 45, 51) -3.38%, rgb(29, 30, 32) 78.58%);
+  background-position-x: initial;
+  background-position-y: initial;
+  background-size: auto 100%;
+  background-repeat-x: no-repeat;
+  background-repeat-y: no-repeat;
+  background-attachment: fixed;
+  background-origin: initial;
+  background-clip: initial;
+  background-color: initial;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+}
+
+.container{
+  padding: 20px;
+  background-color: rgba( 0, 0, 0, 0.2 );
+}

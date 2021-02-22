@@ -1,0 +1,40 @@
+<div class="avatar">
+  <form action="" [formGroup]="formTemplate" (submit)="onSubmit(formTemplate.value)">
+    <p>AVATAR</p>
+    <p>Choose your avatar image and frame</p>
+    <div class="avatar-content">
+      <div class="avatar-content-display">
+        ini untuk foto
+        <br>
+        <img [src]="imgPreviewBig" alt="" class="img-big">
+        <img [src]="imgPreviewMed" alt="" class="img-med">
+        <img [src]="imgPreviewSmall" alt="" class="img-small">
+      </div>
+      <div class="avatar-content-upload">
+        <input type="file" formControlName="imageUrl" accept="image/*" (change)="showPreview($event)">
+        Upload a file from your device. Image should be square, at least 184px x 184px
+      </div>
+
+    </div>
+    <div class="myavatar">
+      Your Avatar
+
+      <div>Ini untuk Avatarnya</div>
+
+      <div class="seeall">
+        <input type="submit" value="See All">
+      </div>
+    </div>
+
+    <div class="myavatar">
+      Your Avatar Frames
+
+    </div>
+
+    <input type="submit" name="" id="" value="Cancel">
+    <input type="submit" name="" id="" value="Submit">
+
+  </form>
+
+
+</div>

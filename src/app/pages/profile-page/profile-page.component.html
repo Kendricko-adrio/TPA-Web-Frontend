@@ -1,6 +1,7 @@
 <!--<p>profile-page works! welcome {{username}}</p>-->
 
-<div class="profile" *ngIf="loaded | async">
+<!--<div class="profile" *ngIf="loaded | async">-->
+<div class="profile">
   <app-header></app-header>
   <!--  {{user.ID}}-->
   <div class="main">
@@ -24,7 +25,7 @@
 <!--          <app-recent-game></app-recent-game>-->
         </div>
         <div class="right">
-
+          <app-profile-sidebar></app-profile-sidebar>
         </div>
       </div>
     </div>

@@ -15,15 +15,15 @@ export class HomePageComponent implements OnInit {
   loaded: Promise<boolean>;
 
   ngOnInit(): void {
-    this.userService.getAuthUser().subscribe(async (data) => {
-      UserService.userAuth = data.data.getAuthUser;
-      console.log(UserService.userAuth);
-      this.loaded = Promise.resolve(true);
-    }, (error) => {
-      UserService.userAuth = null;
-      console.log('there was an error sending the query', error);
-      this.loaded = Promise.resolve(true);
-    });
+    // this.userService.getAuthUser().subscribe(async (data) => {
+    //   UserService.userAuth = data.data.getAuthUser;
+    //   console.log(UserService.userAuth);
+    //   this.loaded = Promise.resolve(true);
+    // }, (error) => {
+    //   UserService.userAuth = null;
+    //   console.log('there was an error sending the query', error);
+    //   this.loaded = Promise.resolve(true);
+    // });
     // this.loaded = Promise.resolve(true);
     // this.loaded = this.userService.getUserAuth();
     // this.loaded = UserService.loaded;
