@@ -1,0 +1,17 @@
+<div class="content">
+
+  <h2>People Who Report this user</h2>
+  <div class="all-game">
+    <div class="all-game-component">Image</div>
+    <div class="all-game-component">Reporter Username</div>
+    <div class="all-game-component">Reporter Description</div>
+
+  </div>
+  <div class="all-game" *ngFor="let c of reports">
+    <img src="{{c.reporter.PhotoUrl}}" class="all-game-component" alt="">
+    <div class="all-game-component">{{c.reporter.userName}}</div>
+    <div class="all-game-component">{{c.reportDescription}}</div>
+  </div>
+
+
+</div>

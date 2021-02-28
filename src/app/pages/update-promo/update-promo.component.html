@@ -1,0 +1,27 @@
+<!--<p>insert-game works!</p>-->
+
+<div class="main">
+  <app-header></app-header>
+  <div class="insert-content">
+    <!--    <div>{{promo.promoDuration}}</div>-->
+    <!--    <div>{{promo.promoDiscount}}</div>-->
+    <form class="form" action="" (ngSubmit)="onSubmit()">
+      <div class="form-component">
+        <div>Promo Discount</div>
+        <input [(ngModel)]="promo.promoDiscount" [ngModelOptions]="{standalone: true}" type="text">
+      </div>
+      <div class="form-component">
+        <div>Promo Duration</div>
+        <input [(ngModel)]="promo.promoDuration" [ngModelOptions]="{standalone: true}" type="text">
+      </div>
+      <div class="form-component">
+        <div>Game Promotion</div>
+        <select name="" id="" [(ngModel)]="promo.gameId" [ngModelOptions]="{standalone: true}" (change)="tester()">
+          <option *ngFor="let g of game" value="{{g.ID}}">{{g.Name}}</option>
+        </select>
+      </div>
+
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+</div>

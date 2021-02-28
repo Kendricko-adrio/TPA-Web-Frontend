@@ -1,0 +1,27 @@
+<div class="content">
+  <div class="left">
+    <div class="top-bar">
+      <input type="text" [(ngModel)]="searchKey" [ngModelOptions]="{standalone: true}">
+      <button>search</button>
+    </div>
+    <div >
+      <app-game-searched-card *ngFor="let g of games" [game]="g"></app-game-searched-card>
+    </div>
+
+  </div>
+  <div class="right">
+    <div class="price">
+      <input type="range" (change)="onRange($event)" max="1000000" value="500000">
+      <div>
+        Price Range : {{price}}
+      </div>
+    </div>
+    <div class="genre">
+      <div class="">Genre</div>
+      <select (change)="onSelect($event)">
+        <option value="0">all</option>
+        <option *ngFor="let g of genres" value="{{g.genreId}}">{{g.genreName}}</option>
+      </select>
+    </div>
+  </div>
+</div>

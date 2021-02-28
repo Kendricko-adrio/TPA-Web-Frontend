@@ -1,10 +1,18 @@
 <!-- <p>search-bar works!</p> -->
 
 <div class="topnav">
-    <a href="">Your Store</a>
-    <a href="">Browse</a>
-    <a href="">Points Shop</a>
-    <a href="">News</a>
-    <a href="">Steam Labs</a>
-    <input type="text" placeholder="Search...">
+  <a href="">Your Store</a>
+  <a href="">Browse</a>
+  <a href="">Points Shop</a>
+  <a href="">News</a>
+  <a href="">Steam Labs</a>
+  <div class="search">
+    <input #search type="text" placeholder="Search...">
+    <img style="cursor: pointer" routerLink="/search/{{text}}" class="search-icon" alt="test" src="https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/search-512.png">
+  </div>
+  <!--    <button type="submit">search</button>-->
+  <div class="searched-game">
+    <app-search-game-card *ngFor="let s of searched" [game]="s"></app-search-game-card>
+  </div>
 </div>
+

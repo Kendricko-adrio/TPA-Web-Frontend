@@ -1,0 +1,33 @@
+<div class="content">
+
+  <button routerLink="insert">Insert Promo</button>
+  <div class="all-game">
+    <div class="all-game-component">image</div>
+    <div class="all-game-component">Username</div>
+    <div class="all-game-component">Full Name</div>
+    <div class="all-game-component">Status</div>
+  </div>
+  <div class="all-game" *ngFor="let c of users">
+    <img src="{{c.PhotoUrl}}" class="all-game-component" alt="">
+    <div style="cursor: pointer" class="all-game-component" routerLink="view-report/{{c.userName}}">{{c.userName}}</div>
+    <div class="all-game-component">{{c.realName}}</div>
+    <div class="all-game-component" *ngIf="c.statusId == 1">Not Authorized</div>
+    <div class="all-game-component" *ngIf="c.statusId == 2">Not Suspended</div>
+    <div class="all-game-component" *ngIf="c.statusId == 3">Suspended</div>
+    <!--    <div class="all-game-component">{{c.promoDiscount}}</div>-->
+    <!--    <button routerLink="update/{{c.promoId}}">Update</button>-->
+    <!--    test-->
+  </div>
+
+  <span style="cursor:pointer;" (click)="onPrev()"><</span>
+  <span>{{currPage}}</span>
+  <span style="cursor:pointer;" (click)="onNext()">></span>
+
+  <!--  <span #pages style="cursor: pointer" *ngFor="let p of pages" id="{{p}}"-->
+  <!--        (click)="onClick(pages.id)"-->
+  <!--  >{{p}}</span>-->
+  <!--  <span *ngFor="let c of promo ; let i = index" >-->
+  <!--    <span style="cursor: pointer" #page id="{{i + 1}}" (click)="changePage(page.id)">{{c}}</span>-->
+  <!--  </span>-->
+
+</div>

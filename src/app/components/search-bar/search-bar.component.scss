@@ -1,27 +1,54 @@
 @import "src/app/styles/global";
 
-.topnav{
-    font-family: $font;
-    margin: 10px;
-    display: flex;
-    justify-content: space-between;
-    background-color: rgb(108, 172, 224, 0.2);
-    a{
+.topnav {
+  font-family: $font;
+  margin: 10px;
+  display: flex;
+  justify-content: space-between;
+  //flex-wrap: wrap;
+  background-color: rgb(108, 172, 224, 0.2);
 
-        float: left;
-        display: block;
-        color: white;
-        text-decoration: none;
-        padding: 14px 16px;
-        text-align: center;
-    }
-    input{
-        float: right;
-        padding: 6px;
-        border: none;
+  a {
 
-        margin-top: 8px;
-        margin-right: 16px;
-        font-size: 17px;
-    }
+    float: left;
+    display: block;
+    font-size: 14px;
+    color: white;
+    text-decoration: none;
+    padding: 14px 16px;
+    text-align: center;
+  }
+
+  input {
+    float: right;
+    padding: 6px;
+    border: none;
+
+    margin-top: 8px;
+    margin-right: 16px;
+    font-size: 14px;
+  }
+  position: relative;
+  .search{
+    position: relative;
+  }
+  .searched-game{
+    background-color: rgba(0,0,0,0.3);
+    position: absolute;
+    top: 50px;
+    right: 0px;
+    z-index: 100;
+  }
+}
+
+.search-icon{
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 15%;
+  right: 10%;
+}
+
+.hide{
+  display: none;
 }

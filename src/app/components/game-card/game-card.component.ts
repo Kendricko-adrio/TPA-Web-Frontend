@@ -16,10 +16,11 @@ export class GameCardComponent implements OnInit {
   @Input() gameCurr;
 
   ngOnInit(): void {
+    // console.log(this.game);
   }
 
   update(): void {
     this.gameCurr = this.game;
-    console.log(this.gameCurr);
+
   }
 }

@@ -17,6 +17,7 @@ export class LoginPageComponent implements OnInit {
               private route: Router
     , private userService: UserService) {
   }
+
   errMsg;
   user: SocialUser;
   username: '';
@@ -37,13 +38,13 @@ export class LoginPageComponent implements OnInit {
 
   submit() {
     this.isUserFound = this.userService.loginUser(this.username, this.password).subscribe(data => {
-        console.log('got data', data);
-        UserService.userAuth = data.data.loginUser;
-        this.route.navigate(['/']);
-      }, (error) => {
-        console.log('there was an error sending the query', error);
-        this.errMsg = 'email or pass wrong';
-      });
+      console.log('got data', data);
+      UserService.userAuth = data.data.loginUser;
+      this.route.navigate(['/']);
+    }, (error) => {
+      console.log('there was an error sending the query', error);
+      this.errMsg = 'email or pass wrong';
+    });
     // console.log(this.isUserFound);
     // this.route.navigate(['/']);
   }

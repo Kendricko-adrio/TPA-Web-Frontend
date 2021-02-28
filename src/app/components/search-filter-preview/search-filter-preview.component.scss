@@ -1,0 +1,38 @@
+@import "src/app/styles/global";
+
+.content{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  .left{
+    .top-bar{
+      width: 100%;
+      background-color: rgba(0,0,0,0.3);
+      padding: 10px;
+      margin-bottom: 10px;
+      input{
+        width: 40%;
+        color: $font-color;
+        background-color: rgb(34, 58, 76);
+        border-color: white;
+      }
+      button{
+        background-color: rgb(34, 58, 76);
+        font-family: $font;
+        color: $font-color;
+      }
+    }
+    width: 70%;
+    margin: 10px;
+
+  }
+  .right{
+    width: 30%;
+    margin: 10px;
+    background-color: rgba(0,0,0,0.3);
+    padding: 20px;
+    input[type=range]{
+      width: 100%;
+    }
+  }
+}

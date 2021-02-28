@@ -1,0 +1,28 @@
+
+<div *ngIf="isRequest == true" class="content">
+
+  <h2>Request To Unsuspend</h2>
+  <div class="all-game">
+    <div class="all-game-component">username</div>
+    <div class="all-game-component">Request Status</div>
+    <div class="all-game-component">Button</div>
+  </div>
+  <div class="all-game" #game *ngFor="let c of userRequest" id="{{c.requestId}}">
+<!--    <img src="{{c.reporter.PhotoUrl}}" class="all-game-component" alt="">-->
+    <div class="all-game-component">{{c.suspendedUser.userName}}</div>
+    <div class="all-game-component">{{c.suspendedType.typeName}}</div>
+    <div class="all-game-component" *ngIf="c.suspendedTypeId == 1; else elseBlock">
+      <button (click)="onAccept(game.id)">Accept</button>
+      <button (click)="onReject(game.id)">Reject</button>
+    </div>
+    <ng-template class="all-game-component" #elseBlock>
+      No Action
+    </ng-template>
+
+  </div>
+
+
+</div>
+<div *ngIf="isRequest == false" class="content">
+    <h2>No Unsuspend Request</h2>
+</div>

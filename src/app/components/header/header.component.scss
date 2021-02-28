@@ -68,6 +68,7 @@ $padding: 0 10px 0 10px;
     }
 
     &-name:hover{
+      z-index: 200;
       ul{
         display: block;
       }

@@ -22,7 +22,6 @@ export class GetAllgamePaginateComponent implements OnInit {
   changePage(pageNumber){
     console.log(pageNumber);
     this.gameService.getGamePaginate(pageNumber).subscribe(async data => {
-      console.log(data);
       this.games = data.data.getAllGamesPaginated;
     });
   }

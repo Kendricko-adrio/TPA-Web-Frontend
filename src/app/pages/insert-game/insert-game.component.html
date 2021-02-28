@@ -3,7 +3,7 @@
 <div class="main">
   <app-header></app-header>
   <div class="insert-content">
-<!--    <div>{{game.Name}}</div>-->
+    <div>{{game.Name}}</div>
     <form class="form" action="" (ngSubmit)="onSubmit()">
       <div class="form-component">
         <div>Game Title</div>
@@ -19,11 +19,12 @@
       </div>
       <div class="form-component">
         <div>Game Banner</div>
-        <input type="file" formControlName="imageUrl" accept="image/*" >
+        <input type="file" accept="image/*" (change)="insertGameBanner($event)">
+        <div>{{uploadProgress}}</div>
       </div>
       <div class="form-component">
         <div>Game Slide Shows</div>
-        <input type="file" formControlName="imageUrl" accept="image/*" >
+        <input type="file" accept="image/*" (change)="insertGameImage($event)" >
       </div>
       <div class="form-component">
         <div>Game Tags</div>

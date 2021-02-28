@@ -2,7 +2,7 @@
 <div class="register">
     <app-header></app-header>
 
-    
+
     <div class="register-form">
         <H2>CREATE YOUR ACCOUNT </H2>
         <h3>{{errorMsg}}</h3>
@@ -12,7 +12,7 @@
                 <p>Email Address</p>
                 <input type="text" [(ngModel)]="email" [ngModelOptions]="{standalone: true}">
             </div>
-            
+
             <div class="component">
                 <p>Confirm your Address</p>
                 <input type="text" [(ngModel)]="confEmail" [ngModelOptions]="{standalone: true}" >
@@ -27,7 +27,7 @@
             <div class="component">
                 <re-captcha (resolved)="resolved($event)" siteKey={{siteKey}}></re-captcha>
             </div>
-            
+
             <input type="submit" value="Submit">
         </form>
         <!-- <div>a</div>
@@ -39,5 +39,5 @@
         <div>a</div>
         <div>a</div> -->
     </div>
-
+  <app-footer></app-footer>
 </div>

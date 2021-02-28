@@ -20,7 +20,7 @@
     <div class="text">
       untuk feature badge
     </div>
-    <div class="text">
+    <div *ngIf="user.userName === userAuth.userName" class="text">
       <button (click)="editProfile()">edit profile</button>
     </div>
 

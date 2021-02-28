@@ -1,0 +1,12 @@
+<!--<p>insert-game works!</p>-->
+
+<div class="main">
+  <app-header></app-header>
+  <div class="insert-content">
+    <!--    <div>{{promo.promoDuration}}</div>-->
+    <!--    <div>{{promo.promoDiscount}}</div>-->
+
+    <app-report-list [userId]="user.userID"></app-report-list>
+    <app-unsuspend-request [userId]="user.userID"></app-unsuspend-request>
+  </div>
+</div>

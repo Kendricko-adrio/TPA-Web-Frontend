@@ -1,0 +1,29 @@
+.content{
+  .all-game{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background-color: rgba(0,0,0,0.2);
+    margin-bottom: 10px;
+    img{
+      width: 200px;
+    }
+    &-component{
+      height: inherit;
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      align-self: center;
+      width: 200px;
+      min-width: 100px;
+      padding: 20px;
+    }
+    button{
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      align-self: center;
+      height: 30px;
+    }
+  }
+}

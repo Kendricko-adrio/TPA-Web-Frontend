@@ -1,0 +1,35 @@
+@import "src/app/styles/global";
+
+.footer {
+  padding: 30px;
+  height: 100%;
+  //max-height: 250px;
+  width: 100%;
+  background-color: black;
+  color: $font-color;
+  font-family: $font;
+
+  h2 {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+  }
+
+  .link {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+
+    .link-component {
+      display: flex;
+      justify-content: center;
+      padding: 30px;
+      width: 200px;
+      a{
+        color: $font-color;
+        text-decoration: none;
+      }
+    }
+  }
+}

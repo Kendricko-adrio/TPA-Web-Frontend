@@ -77,7 +77,7 @@ export class UserService {
     });
   }
 
-  updateAvatar(imageUrl): void{
+  updateAvatar(imageUrl): void {
     this.apollo.mutate({
       mutation: gql`
       mutation updateImageUrl($imageUrl : String!){
@@ -148,9 +148,9 @@ export class UserService {
     });
   }
 
-  getAdmin(username, password){
+  getAdmin(username, password): Observable<Query> {
     return this.apollo.query<Query>({
-      query: gql `
+      query: gql`
       query getAdmin($username: String! $password: String!){
   getAdmin(username: $username, password: $password){
     userID,
@@ -160,9 +160,38 @@ export class UserService {
 }
       `,
       variables: {
-        password : password,
+        password: password,
         username: username
       }
+    });
+  }
+
+  getALlUserPaginated(page): Observable<Query> {
+    return this.apollo.query<Query>({
+      query: gql`
+      query getAllUserPaginated($page: Int!){
+  getAllUserPaginated(page: $page){
+    userID,
+    userName,
+    realName,
+    PhotoUrl,
+    statusId
+  }
+}
+      `,
+      variables: {
+        page: page
+      }
+    });
+  }
+
+  getTotalUser(): Observable<Query> {
+    return this.apollo.query<Query>({
+      query: gql`
+      query getTotalUser{
+  getTotalUser
+}
+      `
     });
   }
 

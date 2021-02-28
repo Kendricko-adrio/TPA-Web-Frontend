@@ -35,6 +35,21 @@ import { ManageGameComponent } from './pages/manage-game/manage-game.component';
 import { GetAllgamePaginateComponent } from './components/get-allgame-paginate/get-allgame-paginate.component';
 import { GameCardComponent } from './components/game-card/game-card.component';
 import {InsertGameComponent} from './pages/insert-game/insert-game.component';
+import { UpdateGameComponent } from './pages/update-game/update-game.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { ManagePromosComponent } from './pages/manage-promos/manage-promos.component';
+import { GetAllPromoComponent } from './components/get-all-promo/get-all-promo.component';
+import { InsertPromoComponent } from './pages/insert-promo/insert-promo.component';
+import { UpdatePromoComponent } from './pages/update-promo/update-promo.component';
+import { ManageUserComponent } from './pages/manage-user/manage-user.component';
+import { GetAlluserPaginatedComponent } from './components/get-alluser-paginated/get-alluser-paginated.component';
+import { ReportUserPageComponent } from './pages/report-user-page/report-user-page.component';
+import { ReportListComponent } from './components/report-list/report-list.component';
+import { UnsuspendRequestComponent } from './components/unsuspend-request/unsuspend-request.component';
+import { SearchGameCardComponent } from './components/search-game-card/search-game-card.component';
+import { SearchGamePageComponent } from './pages/search-game-page/search-game-page.component';
+import { SearchFilterPreviewComponent } from './components/search-filter-preview/search-filter-preview.component';
+import { GameSearchedCardComponent } from './components/game-searched-card/game-searched-card.component';
 
 
 
@@ -65,6 +80,21 @@ import {InsertGameComponent} from './pages/insert-game/insert-game.component';
     GetAllgamePaginateComponent,
     GameCardComponent,
     InsertGameComponent,
+    UpdateGameComponent,
+    FooterComponent,
+    ManagePromosComponent,
+    GetAllPromoComponent,
+    InsertPromoComponent,
+    UpdatePromoComponent,
+    ManageUserComponent,
+    GetAlluserPaginatedComponent,
+    ReportUserPageComponent,
+    ReportListComponent,
+    UnsuspendRequestComponent,
+    SearchGameCardComponent,
+    SearchGamePageComponent,
+    SearchFilterPreviewComponent,
+    GameSearchedCardComponent,
 
   ],
   imports: [
