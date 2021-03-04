@@ -9,7 +9,7 @@
     <button routerLink="update/{{c.promoId}}">Update</button>
   </div>
   <span #pages style="cursor: pointer" *ngFor="let p of pages" id="{{p}}"
-  (click)="onClick(pages.id)"
+        (click)="onClick(pages.id)"
   >{{p}}</span>
   <!--  <span *ngFor="let c of promo ; let i = index" >-->
   <!--    <span style="cursor: pointer" #page id="{{i + 1}}" (click)="changePage(page.id)">{{c}}</span>-->

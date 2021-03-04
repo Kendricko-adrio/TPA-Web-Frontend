@@ -1,0 +1,22 @@
+h2{
+  padding: 20px;
+}
+.content{
+
+  padding: 20px;
+  display: flex;
+
+  .left{
+    width: 60%;
+    margin-right: 20px;
+  }
+  .right{
+    width: 40%;
+    img{
+      width: 100%;
+    }
+    .desc{
+      font-size: 14px;
+    }
+  }
+}

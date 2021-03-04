@@ -1,0 +1,28 @@
+@import "src/app/styles/global";
+
+.card {
+  //background-color: rgba(0,0,0,0.2);
+  //background-color: red;
+  display: flex;
+  //justify-content: space-between;
+  margin-bottom: 10px;
+
+  img {
+    width: 120px;
+    height: 100%;
+  }
+
+  .description {
+    //display: flex;
+    justify-content: space-around;
+    margin: 20px;
+    flex-direction: column;
+    width: 100%;
+    font-size: 10px;
+  }
+
+  .price {
+    align-self: center;
+    width: 100%;
+  }
+}

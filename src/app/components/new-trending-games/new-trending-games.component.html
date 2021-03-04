@@ -1,0 +1,13 @@
+<div class="trending-content">
+  <div class="card">
+    <div #trendingCard *ngFor="let g of games; let i = index" id="{{i}}" (mouseenter)="hovered = i"
+         [ngClass]="hovered == i? 'hovered': 'non-hovered'" >
+      <app-trending-card [game]="g" routerLink="/games/{{g.ID}}"></app-trending-card>
+    </div>
+    <!--    <app-trending-card></app-trending-card>-->
+  </div>
+  <div class="game-preview">
+    <app-new-game-preview *ngFor="let g of games; let i = index" [ngClass]="(i == hovered) ? 'show': 'hide'"
+                          [game]="g"></app-new-game-preview>
+  </div>
+</div>

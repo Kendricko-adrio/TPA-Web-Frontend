@@ -18,7 +18,7 @@ export class UpdatePromoComponent implements OnInit {
   ) {
   }
 
-  game;
+  game = [];
   promo: Promo;
   promoId: number;
   ngOnInit(): void {

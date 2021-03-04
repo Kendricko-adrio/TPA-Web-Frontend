@@ -20,15 +20,24 @@
       <div class="form-component">
         <div>Game Banner</div>
         <input type="file" accept="image/*" (change)="insertGameBanner($event)">
-        <div>{{uploadProgress}}</div>
       </div>
-      <div class="form-component">
-        <div>Game Slide Shows</div>
-        <input type="file" accept="image/*" (change)="insertGameImage($event)" >
+      <div>Game Slide Shows</div>
+      <div class="form-component file" *ngFor="let ss of slideArr">
+        <input type="file" accept="image/*" (change)="insertGameImage($event)">
+        <img src="{{ss.slideShowUrl}}" style="width: 100px" alt="">
+      </div>
+      <div class="form-component file">
+        <input type="file" multiple accept="image/*" (change)="insertGameImage($event)">
+      </div>
+
+      <div *ngFor="let i of genreSelected">
+        {{i}}
       </div>
       <div class="form-component">
         <div>Game Tags</div>
-        <input [(ngModel)]="game.tag" [ngModelOptions]="{standalone: true}" type="text">
+        <select name="" (change)="genreChange($event)">
+          <option *ngFor="let g of genres" value="{{g.genreId}}">{{g.genreId}}. {{g.genreName}}</option>
+        </select>
       </div>
       <div class="form-component">
         <div>Game System Requirement</div>
@@ -37,4 +46,5 @@
       <input type="submit" value="Submit">
     </form>
   </div>
+
 </div>

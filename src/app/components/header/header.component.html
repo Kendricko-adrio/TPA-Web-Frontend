@@ -26,10 +26,23 @@
     <div class="right-install">
       <a>Install Steam</a>
     </div>
+    <div class="right-msg">
+      <img src="https://img.pngio.com/email-inbox-letter-mail-message-messages-icon-web-ui-message-icon-png-512_512.png" alt="">
+      <ul>
+        <li>New Command</li>
+        <hr>
+        <li style="cursor: pointer" routerLink="/friend">{{totalRequest}} New Friend Request</li>
+        <hr>
+        <li>New Item</li>
+        <hr>
+        <li>New Gift</li>
+        <hr>
+        <li>New Chat</li>
+      </ul>
+    </div>
     <div class="right-name">
       {{userAuth.userName}}
       <ul>
-
         <li><a routerLink="user/{{userAuth.customUrl}}">View Profile</a></li>
         <li><a>Account Details</a></li>
         <li (click)="logOut()"><a routerLink="/">LogOut: {{userAuth.userName}}</a></li>
@@ -38,11 +51,10 @@
         <li *ngIf="userAuth.role == 'admin'"><a routerLink="/admin/manage-game">Manage Game</a></li>
         <li *ngIf="userAuth.role == 'admin'"><a routerLink="/admin/manage-promo">Manage Promo</a></li>
         <li *ngIf="userAuth.role == 'admin'"><a routerLink="/admin/manage-user">Manage User</a></li>
-
       </ul>
+      <div>Rp. {{userAuth.money}}</div>
     </div>
     <div class="right-photo">
-
       <img src="{{userAuth.PhotoUrl}}">
     </div>
   </div>

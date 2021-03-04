@@ -18,6 +18,41 @@ export class UserService {
   ) {
   }
 
+  addGameToWishlist(gameId): any {
+    return this.apollo.mutate({
+      mutation: gql`
+mutation addGameToWishlist($gameId: Int!){
+  addGameToWishlist(gameId: $gameId){
+    userName
+    wishlist{
+      Name,
+      ID,
+      Description
+    }
+  }
+}
+      `,
+      variables: {
+        gameId: gameId
+      }
+    });
+  }
+
+  deleteWishlist(gameId): any {
+    return this.apollo.mutate({
+      mutation: gql`
+      mutation deleteWishlist($gameId: Int!){
+  deleteWishlist(gameId: $gameId){
+    userID
+  }
+}
+      `,
+      variables: {
+        gameId: gameId
+      }
+    });
+  }
+
   getAuthUser(): Observable<Query> {
     return this.apollo.query<Query>({
       query: gql`
@@ -34,8 +69,20 @@ export class UserService {
       Name,
       Description,
       Image
+    },
+    friends{
+      userID,
+      userName,
+      PhotoUrl
+    },
+    wishlist{
+      ID,
+      Name,
+      Description,
+      imageBanner
     }
-    customUrl
+    customUrl,
+    money
   }
 }
       `
@@ -216,7 +263,8 @@ export class UserService {
       Name,
       Description,
       Price,
-      Image
+      Image,
+      imageBanner
     }
   }
 }

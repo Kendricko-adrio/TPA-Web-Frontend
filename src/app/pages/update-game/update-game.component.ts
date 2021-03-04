@@ -3,6 +3,7 @@ import {ActivatedRoute} from '@angular/router';
 import {Game} from '../../models/game';
 import {ApolloService} from '../../services/apollo.service';
 import {AngularFireStorage} from '@angular/fire/storage';
+import {GameSlideShow} from '../../models/game-slide-show';
 
 @Component({
   selector: 'app-update-game',
@@ -24,7 +25,11 @@ export class UpdateGameComponent implements OnInit {
   refBanner;
   selectedImage;
   refImage;
-
+  slideArr = [];
+  genres;
+  // arrayKosong = (num: number) => {
+  //   return Array(num);
+  // }
 
   ngOnInit(): void {
     this.game = new Game();
@@ -40,7 +45,14 @@ export class UpdateGameComponent implements OnInit {
       this.game.systemRequirement = data.data.getGameById.systemRequirement;
       this.game.Description = data.data.getGameById.Description;
       this.game.Price = data.data.getGameById.Price;
-      console.log(this.game);
+      this.game.gameSlideShow = data.data.getGameById.gameSlideShow;
+      this.game.gameSlideShow.forEach(x => {
+        this.slideArr.push(x);
+      });
+    });
+    this.gameService.getALlGenre().subscribe(async data => {
+      this.genres = data.data.getAllGenre;
+      console.log(data);
     });
   }
 

@@ -42,21 +42,54 @@ $padding: 0 10px 0 10px;
       padding: $padding;
     }
 
-    &-name {
-      padding: $padding;
+    &-msg {
+      img {
+        width: 10px;
+      }
+
       position: relative;
-      ul{
+
+      ul {
         position: absolute;
         left: 0;
         margin-top: 10px;
         background-color: black;
         display: none;
-        li{
+        width: 150px;
+        padding: 10px;
+
+        li {
           display: flex;
           padding: 10px;
           justify-content: center;
           align-content: center;
-          a{
+          font-size: 10px;
+          font-family: $font;
+          text-decoration: none;
+          color: $font-color;
+        }
+
+      }
+    }
+
+    &-name {
+      padding: $padding;
+      position: relative;
+
+      ul {
+        position: absolute;
+        left: 0;
+        margin-top: 10px;
+        background-color: black;
+        display: none;
+
+        li {
+          display: flex;
+          padding: 10px;
+          justify-content: center;
+          align-content: center;
+
+          a {
             font-family: $font;
             text-decoration: none;
             color: $font-color;
@@ -67,12 +100,23 @@ $padding: 0 10px 0 10px;
 
     }
 
-    &-name:hover{
+    &-msg:hover {
       z-index: 200;
-      ul{
+
+      ul {
         display: block;
       }
     }
+
+    &-name:hover {
+      z-index: 200;
+
+      ul {
+        display: block;
+      }
+    }
+
+
     img {
       padding: 0;
       width: 32px;

@@ -1,0 +1,13 @@
+<h2>{{game.Name}}</h2>
+<div class="content">
+
+  <div class="left">
+    <app-game-slideshow-preview [game]="game"></app-game-slideshow-preview>
+  </div>
+  <div class="right">
+    <img src="{{game.imageBanner}}" alt="">
+    <div class="desc">
+      {{game.Description}}
+    </div>
+  </div>
+</div>

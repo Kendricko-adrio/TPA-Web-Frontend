@@ -1,0 +1,33 @@
+<div class="page">
+  <app-header></app-header>
+  <div class="page-main">
+    <div class="left">
+      <button
+        #buttonHome
+        type="button general-button"
+        (click)="onClick(buttonHome.id)"
+        id="button1"
+      >Pending accept</button>
+
+      <button
+        #buttonFriend
+        type="button general-button"
+        (click)="onClick(buttonFriend.id)"
+        id="button2"
+      >My Friend</button>
+
+    </div>
+
+    <div class="right">
+      <app-pending-friend
+        [ngClass]="buttons.button1? 'show' : 'hide'"
+      ></app-pending-friend>
+
+      <app-my-friends
+        [ngClass]="buttons.button2? 'show' : 'hide'"
+      ></app-my-friends>
+
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

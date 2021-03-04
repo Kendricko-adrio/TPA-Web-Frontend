@@ -20,6 +20,9 @@ import {UpdatePromoComponent} from './pages/update-promo/update-promo.component'
 import {ManageUserComponent} from './pages/manage-user/manage-user.component';
 import {ReportUserPageComponent} from './pages/report-user-page/report-user-page.component';
 import {SearchGamePageComponent} from './pages/search-game-page/search-game-page.component';
+import {FriendPageComponent} from './pages/friend-page/friend-page.component';
+import {GameDetailComponent} from './pages/game-detail/game-detail.component';
+import {WishlistPageComponent} from './pages/wishlist-page/wishlist-page.component';
 
 
 
@@ -101,6 +104,21 @@ const routes: Routes = [
   {
     path: 'search/:search',
     component: SearchGamePageComponent,
+    canActivate: [GetAuthGuard]
+  },
+  {
+    path: 'friend',
+    component: FriendPageComponent,
+    canActivate: [GetAuthGuard]
+  },
+  {
+    path: 'games/:gameId',
+    component: GameDetailComponent,
+    canActivate: [GetAuthGuard]
+  },
+  {
+    path: 'my-wishlist',
+    component: WishlistPageComponent,
     canActivate: [GetAuthGuard]
   }
 ];

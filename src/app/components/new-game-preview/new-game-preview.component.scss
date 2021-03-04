@@ -1,0 +1,12 @@
+.preview {
+  color: black;
+  padding: 20px;
+  background-color: #94b9d2;
+  .image {
+    display: flex;
+    flex-direction: column;
+    img {
+      width: 200px;
+    }
+  }
+}

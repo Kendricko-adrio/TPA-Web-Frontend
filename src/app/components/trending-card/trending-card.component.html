@@ -1,0 +1,12 @@
+<div class="card">
+  <img src="{{game.imageBanner}}" alt="">
+  <div class="description">
+    <div>{{game.Name}}</div>
+    <div>genre</div>
+    <span *ngFor="let gen of game.genre">{{gen.genreName}} </span>
+  </div>
+  <div class="price">
+    {{'Rp. ' + game.Price}} &nbsp;
+  </div>
+
+</div>

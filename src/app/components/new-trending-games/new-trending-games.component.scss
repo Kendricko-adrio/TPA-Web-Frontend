@@ -1,0 +1,28 @@
+@import "src/app/styles/global";
+
+.trending-content{
+  display: flex;
+  .card{
+    width: 70%;
+  }
+  .game-preview{
+    width: 30%;
+  }
+}
+
+.hovered{
+  background-color: #94b9d2;
+  color: black;
+}
+
+.non-hovered{
+  background-color: rgba(0,0,0,0.2);
+  color: $font-color;
+}
+
+.hide{
+  display: none;
+}
+.show{
+  display: block;
+}

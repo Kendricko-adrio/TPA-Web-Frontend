@@ -14,8 +14,8 @@
             Recent Activity
           </div>
 
-          <div *ngFor="let u of user.games">
-            <app-recent-game [game]="u"></app-recent-game>
+          <div >
+            <app-recent-game *ngFor="let u of user.games" [game]="u"></app-recent-game>
 
           </div>
 <!--          <app-recent-game></app-recent-game>-->

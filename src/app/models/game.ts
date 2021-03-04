@@ -1,3 +1,6 @@
+import {GameSlideShow} from './game-slide-show';
+import {Genre} from './genre';
+
 export class Game {
   ID: number;
   Name: string;
@@ -8,4 +11,6 @@ export class Game {
   imageBanner: string;
   tag: string;
   systemRequirement: string;
+  gameSlideShow: GameSlideShow[];
+  genre: number[];
 }

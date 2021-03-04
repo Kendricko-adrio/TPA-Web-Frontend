@@ -1,0 +1,29 @@
+<div class="page">
+  <app-header></app-header>
+  <div class="page-main">
+    <div class="header">
+      <img src="{{this.user.PhotoUrl}}" alt="">
+      <div class="tulisan">
+        {{user.userName}}'S WISHLIST
+      </div>
+    </div>
+
+    <br>
+    <br>
+    <hr>
+    <div class="list" *ngIf="user.wishlist.length == 0">
+      No Game
+    </div>
+    <div class="list" *ngIf="user.wishlist.length != 0">
+      <div class="card" *ngFor="let wl of user.wishlist">
+        <img src="{{wl.imageBanner}}" alt="">
+        <div class="desc">
+          <div>{{wl.Name}}</div>
+          <div>{{wl.Description}}</div>
+          <button (click)="onDelete(wl.ID)">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

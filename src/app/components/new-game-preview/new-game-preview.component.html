@@ -1,0 +1,7 @@
+<div class="preview">
+  <div>{{game.Name}}</div>
+  <!--  <div>untuk tag</div>-->
+  <div class="image">
+    <img *ngFor="let ss of game.gameSlideShow" src="{{ss.slideShowUrl}}" alt="">
+  </div>
+</div>

@@ -2,6 +2,7 @@ import { UserService } from './../../services/user.service';
 import { Component, OnInit } from '@angular/core';
 import {AuthUser} from '../../models/auth-user';
 import {Router} from '@angular/router';
+import {FriendService} from '../../services/friend.service';
 
 @Component({
   selector: 'app-header',
@@ -10,12 +11,18 @@ import {Router} from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService,
+              private friendService: FriendService,
+  ) { }
   userAuth = UserService.userAuth;
   user;
-
+  totalRequest;
   ngOnInit(): void {
     console.log(UserService.userAuth);
+    this.friendService.getTotalRequest().subscribe(data =>{
+      this.totalRequest = data.data.getTotalRequestFriend;
+
+    });
     // this.userAuth = this.userService.getUserAuth();
 
     // console.log(this.userAuth);

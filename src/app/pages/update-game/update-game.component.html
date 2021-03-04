@@ -11,7 +11,7 @@
       </div>
       <div class="form-component">
         <div>Game Description</div>
-        <input [(ngModel)]="game.Description" [ngModelOptions]="{standalone: true}"  type="text">
+        <input [(ngModel)]="game.Description" [ngModelOptions]="{standalone: true}" type="text">
       </div>
       <div class="form-component">
         <div>Game Price</div>
@@ -21,13 +21,19 @@
         <div>Game Banner</div>
         <input type="file" accept="image/*" (change)="insertGameBanner($event)">
       </div>
-      <div class="form-component">
-        <div>Game Slide Shows</div>
+      <div>Game Slide Shows</div>
+      <div class="form-component file" *ngFor="let ss of slideArr">
+        <input type="file" accept="image/*" (change)="insertGameImage($event)">
+        <img src="{{ss.slideShowUrl}}" style="width: 100px" alt="">
+      </div>
+      <div class="form-component file">
         <input type="file" accept="image/*" (change)="insertGameImage($event)">
       </div>
       <div class="form-component">
         <div>Game Tags</div>
-        <input [(ngModel)]="game.tag" [ngModelOptions]="{standalone: true}" type="text">
+        <select name="" id="">
+          <option *ngFor="let g of genres" value="{{g.genreId}}">{{g.genreName}}</option>
+        </select>
       </div>
       <div class="form-component">
         <div>Game System Requirement</div>

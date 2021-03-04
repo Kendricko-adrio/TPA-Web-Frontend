@@ -50,6 +50,22 @@ import { SearchGameCardComponent } from './components/search-game-card/search-ga
 import { SearchGamePageComponent } from './pages/search-game-page/search-game-page.component';
 import { SearchFilterPreviewComponent } from './components/search-filter-preview/search-filter-preview.component';
 import { GameSearchedCardComponent } from './components/game-searched-card/game-searched-card.component';
+import {CommonModule} from '@angular/common';
+import { FriendPageComponent } from './pages/friend-page/friend-page.component';
+import { PendingFriendComponent } from './components/pending-friend/pending-friend.component';
+import { PendingCardComponent } from './components/pending-card/pending-card.component';
+import { MyFriendsComponent } from './components/my-friends/my-friends.component';
+import { MyFriendsDetailComponent } from './components/my-friends-detail/my-friends-detail.component';
+import { GameHomePreviewComponent } from './components/game-home-preview/game-home-preview.component';
+import { NewTrendingGamesComponent } from './components/new-trending-games/new-trending-games.component';
+import { TrendingCardComponent } from './components/trending-card/trending-card.component';
+import { NewGamePreviewComponent } from './components/new-game-preview/new-game-preview.component';
+import { GameOnSaleComponent } from './components/game-on-sale/game-on-sale.component';
+import { OnSaleCardComponent } from './components/on-sale-card/on-sale-card.component';
+import { GameDetailComponent } from './pages/game-detail/game-detail.component';
+import { GameDisplayComponent } from './components/game-display/game-display.component';
+import { GameSlideshowPreviewComponent } from './components/game-slideshow-preview/game-slideshow-preview.component';
+import { WishlistPageComponent } from './pages/wishlist-page/wishlist-page.component';
 
 
 
@@ -95,9 +111,25 @@ import { GameSearchedCardComponent } from './components/game-searched-card/game-
     SearchGamePageComponent,
     SearchFilterPreviewComponent,
     GameSearchedCardComponent,
+    FriendPageComponent,
+    PendingFriendComponent,
+    PendingCardComponent,
+    MyFriendsComponent,
+    MyFriendsDetailComponent,
+    GameHomePreviewComponent,
+    NewTrendingGamesComponent,
+    TrendingCardComponent,
+    NewGamePreviewComponent,
+    GameOnSaleComponent,
+    OnSaleCardComponent,
+    GameDetailComponent,
+    GameDisplayComponent,
+    GameSlideshowPreviewComponent,
+    WishlistPageComponent,
 
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     GraphQLModule,

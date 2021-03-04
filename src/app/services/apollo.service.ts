@@ -28,7 +28,15 @@ export class ApolloService {
     imageBanner,
     Image,
     tag,
-    systemRequirement
+    systemRequirement,
+    gameSlideShow{
+      slideShowId,
+      slideShowUrl
+    },
+    genre{
+      genreId,
+      genreName
+    }
   }
 }
       `,
@@ -41,11 +49,15 @@ export class ApolloService {
   insertGame(game: Game): any {
     return this.apollo.mutate({
       mutation: gql`
-      mutation insertGame($game : gameInput!){
+      mutation insertGame($game: gameInput!){
   insertGame(game: $game){
     ID,
-    Name,
-    Description
+genre{
+      genreName
+    }
+    gameSlideShow{
+      slideShowUrl
+    }
   }
 }
       `,
@@ -83,7 +95,8 @@ export class ApolloService {
     Description,
     Price,
     Rating,
-    Image
+    Image,
+    imageBanner
   }
 }
       `,
@@ -119,6 +132,7 @@ export class ApolloService {
     Description,
     Price,
     Image,
+    imageBanner,
     CreatedAt
   }
 }
@@ -192,4 +206,44 @@ export class ApolloService {
       }
     });
   }
+
+  newGame(): Observable<Query> {
+    return this.apollo.query<Query>({
+      query: gql`
+      query getNewGame{
+  getNewGame{
+  ID,
+    Name,
+    imageBanner,
+    genre{
+      genreName
+    },
+    Price,
+    gameSlideShow{
+      slideShowUrl
+    }
+  }
+}
+      `
+    });
+  }
+
+  getOnSale(): Observable<Query> {
+    return this.apollo.query<Query>({
+      query: gql`
+      query getGameOnSale{
+  getOnSale{
+    game{
+    ID,
+      Name,
+      Price,
+      imageBanner,
+    }
+    promoDiscount
+  }
+}
+      `
+    });
+  }
+
 }
