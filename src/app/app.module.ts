@@ -66,6 +66,11 @@ import { GameDetailComponent } from './pages/game-detail/game-detail.component';
 import { GameDisplayComponent } from './components/game-display/game-display.component';
 import { GameSlideshowPreviewComponent } from './components/game-slideshow-preview/game-slideshow-preview.component';
 import { WishlistPageComponent } from './pages/wishlist-page/wishlist-page.component';
+import { EditFeatureBadgeComponent } from './components/edit-feature-badge/edit-feature-badge.component';
+import { FeatureBadgeCardComponent } from './components/feature-badge-card/feature-badge-card.component';
+import { FriendCardComponent } from './components/friend-card/friend-card.component';
+import { MiniProfileComponent } from './components/mini-profile/mini-profile.component';
+import { EditProfileThemeComponent } from './components/edit-profile-theme/edit-profile-theme.component';
 
 
 
@@ -126,6 +131,11 @@ import { WishlistPageComponent } from './pages/wishlist-page/wishlist-page.compo
     GameDisplayComponent,
     GameSlideshowPreviewComponent,
     WishlistPageComponent,
+    EditFeatureBadgeComponent,
+    FeatureBadgeCardComponent,
+    FriendCardComponent,
+    MiniProfileComponent,
+    EditProfileThemeComponent,
 
   ],
   imports: [

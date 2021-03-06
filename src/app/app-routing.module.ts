@@ -55,7 +55,7 @@ const routes: Routes = [
   {
     path: 'user/:username/edit',
     component: EditProfileComponent,
-    canActivate: [WaitProfileGuard]
+    canActivate: [WaitProfileGuard, GetAuthGuard]
   },
   {
     path: 'login/admin',

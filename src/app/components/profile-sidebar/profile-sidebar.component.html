@@ -2,7 +2,7 @@
 
 <div class="side-bar">
   <div>Currently Offline</div>
-  <div>last online : </div>
+  <div>last online :</div>
 
   <div>badge</div>
   <ul>
@@ -17,5 +17,9 @@
   </ul>
 
   <div>Groups</div>
-  <div>Friends</div>
+  Friends
+  <div *ngFor="let f of user.friends; let i = index" #mini id="{{i}}" class="friend">
+    <app-mini-profile  class="mini"  [ngClass]="(elementId == mini.id) ?'show' : 'hide' " [user]="f" [imgBg]="f.currMiniBgImg"></app-mini-profile>
+    <app-my-friends-detail class="show" [user]="f" (mouseenter)="onHoverFriend(mini.id)" (mouseleave)="onLeave()"></app-my-friends-detail>
+  </div>
 </div>

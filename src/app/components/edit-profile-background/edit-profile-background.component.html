@@ -5,17 +5,17 @@
     <h2>PROFILE BACKGROUND</h2>
     <div>Choose a background to show on your profile page</div>
     <div class="img-container">
-      ini buat preview aja
+      <img src="{{bg.backgroundUrl}}" alt="">
     </div>
+    <button (click)="onUpdate()">Update</button>
     <div class="background-container">
-
       <div class="filter">
         <p>FILTER</p>
         <input type="text">
       </div>
 
       <div class="container">
-        list background yang bisa dipakai
+        <img style="cursor: pointer;" *ngFor="let pg of user.ownProfileBackground" src="{{pg.backgroundUrl}}" (click)="onClick(pg)" alt="">
       </div>
     </div>
 

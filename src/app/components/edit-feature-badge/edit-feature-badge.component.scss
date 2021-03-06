@@ -1,0 +1,12 @@
+.edit{
+  width: 100%;
+  .your-badge{
+    display: flex;
+    width: inherit;
+    justify-content: space-between;
+    align-content: center;
+    button{
+      height: 20px;
+    }
+  }
+}

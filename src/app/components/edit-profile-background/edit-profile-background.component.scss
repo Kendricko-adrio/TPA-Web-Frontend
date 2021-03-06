@@ -1,6 +1,14 @@
 @import '../../styles/global.scss';
 
 .profile-background{
+  form{
+    .img-container{
+      img{
+        width: 100px;
+
+      }
+    }
+  }
   .background-container{
     .filter{
       margin: 20px 0 20px 0 ;
@@ -16,4 +24,10 @@
   }
 }
 
-
+.container{
+  display: flex;
+  img{
+    width: 100px;
+    margin-right: 10px;
+  }
+}

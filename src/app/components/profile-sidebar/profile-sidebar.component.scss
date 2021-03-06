@@ -9,4 +9,23 @@
       padding-bottom: 10px;
     }
   }
+
+  .friend{
+    display: flex;
+    position: relative;
+    width: 100%;
+    .mini{
+      //left: ;
+      right: calc(100%);
+      position: absolute;
+    }
+  }
+}
+
+.hide{
+  display: none;
+}
+
+.show{
+  display: block;
 }

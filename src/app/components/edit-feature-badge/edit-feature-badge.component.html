@@ -1,0 +1,11 @@
+<div class="edit">
+  <div>your badge preview</div>
+  <div class="your-badge">
+    <app-feature-badge-card [badge]="currBadge"></app-feature-badge-card>
+    <button (click)="onUpdate()">update</button>
+  </div>
+  <div class="own-badge">
+    <div>Own Badge</div>
+    <app-feature-badge-card *ngFor="let ob of user.ownBadge" (click)="onClick(ob)" [badge]="ob"></app-feature-badge-card>
+  </div>
+</div>

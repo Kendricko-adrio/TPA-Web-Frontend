@@ -16,7 +16,8 @@ export class EditProfileComponent implements OnInit {
   user = UserService.userAuth;
   // loaded: Promise<boolean>;
   updateId: string;
-  buttons = {button1: false, button2: false};
+  buttons = {button1: false, button2: false, button3: false, button4: false,
+    button5: false, button6: false};
 
   onClick(buttonId): void {
     console.log(buttonId);
@@ -31,7 +32,6 @@ export class EditProfileComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
 
 
   }

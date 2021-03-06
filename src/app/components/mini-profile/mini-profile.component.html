@@ -1,0 +1,10 @@
+<div style="background-image: url({{imgBg}}) ; " class="card">
+  <div class="top">
+    <img src="{{user.PhotoUrl}}" alt="">
+    <div class="name">{{user.userName}}</div>
+  </div>
+  <div class="bottom">
+    <app-feature-badge-card [badge]="user.currBadge"></app-feature-badge-card>
+    <div>Level {{user.level}}</div>
+  </div>
+</div>

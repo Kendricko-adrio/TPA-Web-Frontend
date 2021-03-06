@@ -1,31 +1,21 @@
-<!--<p>profile-page works! welcome {{username}}</p>-->
 
-<!--<div class="profile" *ngIf="loaded | async">-->
 <div class="profile">
   <app-header></app-header>
   <!--  {{user.ID}}-->
   <div class="main">
-    <div class="main-content">
+    <div class="main-content" style="background-color: {{this.user.currTheme.themeName}}">
       <app-profile-head [user]="user"></app-profile-head>
       <div class="two-side">
         <div class="left">
-
           <div class="recent container">
             Recent Activity
           </div>
-
-          <div >
+          <div>
             <app-recent-game *ngFor="let u of user.games" [game]="u"></app-recent-game>
-
           </div>
-<!--          <app-recent-game></app-recent-game>-->
-<!--          <app-recent-game></app-recent-game>-->
-<!--          <app-recent-game></app-recent-game>-->
-<!--          <app-recent-game></app-recent-game>-->
-<!--          <app-recent-game></app-recent-game>-->
         </div>
         <div class="right">
-          <app-profile-sidebar></app-profile-sidebar>
+          <app-profile-sidebar [user]="user"></app-profile-sidebar>
         </div>
       </div>
     </div>

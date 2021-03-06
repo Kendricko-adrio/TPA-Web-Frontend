@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-profile-sidebar',
@@ -8,8 +8,19 @@ import { Component, OnInit } from '@angular/core';
 export class ProfileSidebarComponent implements OnInit {
 
   constructor() { }
-
+  @Input() user;
+  elementId;
   ngOnInit(): void {
+  }
+
+  onLeave(): void {
+    this.elementId = -1;
+    console.log("leave");
+  }
+
+  onHoverFriend(id): void{
+    console.log(id);
+    this.elementId = id;
   }
 
 }

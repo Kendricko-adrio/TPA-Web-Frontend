@@ -15,10 +15,11 @@
   </div>
   <div class="head-right">
     <div class="text">
-      untuk level
+      LEVEL
+      <span class="rounded">{{user.level}}</span>
     </div>
     <div class="text">
-      untuk feature badge
+      <app-feature-badge-card [badge]="user.ownBadge[user.currBadgeId - 1]"></app-feature-badge-card>
     </div>
     <div *ngIf="user.userName === userAuth.userName" class="text">
       <button (click)="editProfile()">edit profile</button>

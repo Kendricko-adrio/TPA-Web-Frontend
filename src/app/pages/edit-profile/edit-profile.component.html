@@ -26,10 +26,32 @@
             >Avatar
             </button>
           </li>
-          <li>Profile Background</li>
-          <li>Mini Profile</li>
-          <li>Theme</li>
-          <li>Featured Badge</li>
+          <li><button
+            #buttonBackground
+            type="button general-button"
+            (click)="updateId='U-002'; onClick(buttonBackground.id)"
+            id="button3"
+          >Profile Background</button></li>
+          <li><button
+            #buttonMini
+            type="button general-button"
+            (click)="updateId='U-002'; onClick(buttonMini.id)"
+            id="button4"
+          >Mini Profile</button></li>
+          <li>
+            <button
+              #buttonTheme
+              type="button general-button"
+              (click)="updateId='U-002'; onClick(buttonTheme.id)"
+              id="button5"
+            >Theme</button>
+          </li>
+          <li><button
+            #buttonBadge
+            type="button general-button"
+            (click)="updateId='U-002'; onClick(buttonBadge.id)"
+            id="button6"
+          >Feature Badge</button></li>
           <li>Favorite Group</li>
         </ul>
       </div>
@@ -37,7 +59,11 @@
         <app-edit-general
           [ngClass]="buttons.button1? 'selected' : 'unselected'"></app-edit-general>
         <app-edit-avatar [ngClass]="buttons.button2? 'selected' : 'unselected'"></app-edit-avatar>
+        <app-edit-feature-badge [ngClass]="buttons.button6? 'selected' : 'unselected'"></app-edit-feature-badge>
         <!--        <app-edit-profile-background></app-edit-profile-background>-->
+        <app-edit-mini-profile [ngClass]="buttons.button4? 'selected' : 'unselected'"></app-edit-mini-profile>
+        <app-edit-profile-theme [ngClass]="buttons.button5? 'selected' : 'unselected'"></app-edit-profile-theme>
+        <app-edit-profile-background [ngClass]="buttons.button3? 'selected' : 'unselected'"></app-edit-profile-background>
       </div>
     </div>
   </div>

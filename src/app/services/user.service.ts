@@ -18,6 +18,67 @@ export class UserService {
   ) {
   }
 
+  setCurrProfileBackground(backgroundId): any{
+    return this.apollo.mutate({
+      mutation: gql`
+      mutation setCurrProfileBackground($backgroundId: Int!){
+  setCurrProfileBackground(backgroundIt: $backgroundId){
+    userID
+  }
+}
+      `,
+      variables: {
+        backgroundId: backgroundId,
+      }
+    });
+  }
+
+  setCurrTheme(themeId): any {
+    return this.apollo.mutate({
+      mutation: gql`
+      mutation setCurrTheme($themeId: Int!){
+  setCurrTheme(themeId:$themeId){
+    userName
+  }
+}
+      `,
+      variables: {
+        themeId: themeId
+      }
+    });
+  }
+
+  setCurrMiniBg(imageUrl): any {
+    return this.apollo.mutate({
+      mutation: gql`
+      mutation setCurrMiniBg($imageUrl: String!){
+  setCurrMiniBg(imageUrl: $imageUrl){
+    userName,
+    currMiniBgImg
+  }
+}
+      `,
+      variables: {
+        imageUrl: imageUrl
+      }
+    });
+  }
+
+  setCurrBadge(badgeId): any {
+    return this.apollo.mutate({
+      mutation: gql`
+      mutation setCurrBadge($badgeId: Int!){
+  setCurrBadge(badgeId: $badgeId){
+    userID
+  }
+}
+      `,
+      variables: {
+        badgeId: badgeId
+      }
+    });
+  }
+
   addGameToWishlist(gameId): any {
     return this.apollo.mutate({
       mutation: gql`
@@ -56,15 +117,20 @@ mutation addGameToWishlist($gameId: Int!){
   getAuthUser(): Observable<Query> {
     return this.apollo.query<Query>({
       query: gql`
-      query getAuth{
+     query getAuth{
   getAuthUser{
     userID,
-    role,
     userName,
     password,
     FirstName,
     LastName,
     PhotoUrl,
+    role,
+    FirstName,
+    LastName,
+    Email,
+    PhotoUrl,
+    customUrl
     games{
       Name,
       Description,
@@ -73,16 +139,45 @@ mutation addGameToWishlist($gameId: Int!){
     friends{
       userID,
       userName,
-      PhotoUrl
+      PhotoUrl,
+
     },
     wishlist{
-      ID,
       Name,
       Description,
       imageBanner
+    },
+    money,
+    ownBadge{
+      badgeId,
+      badgeName,
+      badgeUrl
     }
-    customUrl,
-    money
+    currMiniBgImg,
+    ownMiniBg{
+      miniId,
+      miniUrl
+    },
+    currBadge{
+      badgeName,
+      badgeUrl
+    },
+    currTheme{
+      themeId,
+      themeName
+    },
+    ownTheme{
+      themeId,
+      themeName
+    },
+    ownProfileBackground{
+      backgroundId,
+      backgroundUrl
+    },
+    currProfileBackground{
+      backgroundId,
+      backgroundUrl
+    }
   }
 }
       `
@@ -245,7 +340,7 @@ mutation addGameToWishlist($gameId: Int!){
   getUserByLink(customUrl): Observable<Query> {
     return this.apollo.query<Query>({
       query: gql`
-      query getUserByLink($customUrl: String!){
+    query getUserByLink($customUrl: String!){
   getUserByLink(customUrl: $customUrl){
     userID,
     userName,
@@ -265,6 +360,31 @@ mutation addGameToWishlist($gameId: Int!){
       Price,
       Image,
       imageBanner
+    },
+    friends{
+      userID,
+      userName,
+      PhotoUrl,
+      level,
+      currMiniBgImg,
+      ownBadge{
+        badgeName,
+        badgeUrl,
+        badgeId
+      },
+      currBadge{
+        badgeName,
+        badgeUrl,
+      }
+    },
+    level,
+    ownBadge{
+      badgeName,
+      badgeUrl
+    },
+    currBadgeId,
+    currTheme{
+      themeName
     }
   }
 }

@@ -1,0 +1,10 @@
+<div class="theme">
+  <div>your theme</div>
+<!--  <div>{{currTheme.themeName}}</div>-->
+  <div class="comp" style="background-color: {{theme.themeName}}"></div>
+  <button (click)="onUpdate()">Update</button>
+  <div>own theme</div>
+  <div class="own">
+    <div *ngFor="let t of user.ownTheme" class="comp" style="background-color: {{t.themeName}}" (click)="onClick(t)"></div>
+  </div>
+</div>

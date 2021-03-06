@@ -1,1 +1,10 @@
-<p>edit-mini-profile works!</p>
+<div class="edit">
+  <app-mini-profile [user]="user" [imgBg]="imgBg"></app-mini-profile>
+  <button (click)="onUpdate()">Update</button>
+  Your own Mini Profile Background
+  <div class="own">
+
+    <img  *ngFor="let bg of user.ownMiniBg" (click)="onClick(bg.miniUrl)" src="{{bg.miniUrl}}" alt="">
+  </div>
+
+</div>

@@ -1,0 +1,20 @@
+.card{
+
+  background-color: rgba(0,0,0,0.4);
+  max-width: 300px;
+  min-width: 100px;
+  width: 100%;
+  padding: 10px;
+  .top{
+    display: flex;
+    img{
+      width: 100px;
+    }
+    .name{
+      font-size: 25px;
+      margin-left: 20px;
+      align-self: center;
+    }
+    margin-bottom: 10px;
+  }
+}

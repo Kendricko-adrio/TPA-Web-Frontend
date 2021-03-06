@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {UserService} from '../../services/user.service';
 
 @Component({
   selector: 'app-edit-profile-background',
@@ -7,9 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditProfileBackgroundComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(
+    private userService: UserService
+  ) { }
+  user;
+  bg;
   ngOnInit(): void {
+    this.user = UserService.userAuth;
+    this.bg = this.user.currProfileBackground;
+  }
+
+  onClick(bg): void{
+    this.bg = bg;
+  }
+
+  onUpdate(): void{
+    this.userService.setCurrProfileBackground(this.bg.backgroundId).subscribe(data => {
+      console.log('sukses');
+    });
   }
 
 }
