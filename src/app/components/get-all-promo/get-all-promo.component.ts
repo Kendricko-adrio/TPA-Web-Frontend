@@ -16,6 +16,12 @@ export class GetAllPromoComponent implements OnInit {
   ) {
   }
 
+  onDelete(id): void{
+    this.promoService.deletePromo(id).subscribe(data => {
+      console.log('sukses deleted ', id);
+    });
+  }
+
   ngOnInit(): void {
     this.promoService.getAllPromo(1).subscribe(async data => {
       this.promo = data.data.getAllPromo;

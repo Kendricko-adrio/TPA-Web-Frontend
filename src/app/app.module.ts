@@ -71,6 +71,12 @@ import { FeatureBadgeCardComponent } from './components/feature-badge-card/featu
 import { FriendCardComponent } from './components/friend-card/friend-card.component';
 import { MiniProfileComponent } from './components/mini-profile/mini-profile.component';
 import { EditProfileThemeComponent } from './components/edit-profile-theme/edit-profile-theme.component';
+import { CommunityPageComponent } from './pages/community-page/community-page.component';
+import { CommunityPosterComponent } from './components/community-poster/community-poster.component';
+import { CommunityPosterDetailComponent } from './pages/community-poster-detail/community-poster-detail.component';
+import { CommunityReviewComponent } from './components/community-review/community-review.component';
+import { CommandDetailComponent } from './components/command-detail/command-detail.component';
+import { CommunityReviewDetailComponent } from './pages/community-review-detail/community-review-detail.component';
 
 
 
@@ -136,6 +142,12 @@ import { EditProfileThemeComponent } from './components/edit-profile-theme/edit-
     FriendCardComponent,
     MiniProfileComponent,
     EditProfileThemeComponent,
+    CommunityPageComponent,
+    CommunityPosterComponent,
+    CommunityPosterDetailComponent,
+    CommunityReviewComponent,
+    CommandDetailComponent,
+    CommunityReviewDetailComponent,
 
   ],
   imports: [

@@ -1,0 +1,35 @@
+<div class="page">
+  <app-header></app-header>
+  <div class="page-main">
+    <div>Media for game {{game.Name}}</div>
+    <div class="poster">
+      <div class="left">
+        <img *ngIf="isImage" src="{{post.postAsset}}" alt="">
+        <video *ngIf="!isImage" controls>
+          <source src="{{post.postAsset}}">
+        </video>
+        <div class="add-command">
+          <img src="{{userAuth.PhotoUrl}}" alt="">
+          <div class="component">
+<!--            {{currCommand}}-->
+            <textarea name="" [(ngModel)]="currCommand" [ngModelOptions]="{standalone: true}" placeholder="Add Your Command Here" id="" rows="4"></textarea>
+            <button (click)="onAddCommand()">Submit</button>
+          </div>
+        </div>
+      </div>
+      <div class="right">
+        <div>Created By:</div>
+        <app-my-friends-detail [user]="user"></app-my-friends-detail>
+        <div class="desc">{{post.postDescription}}</div>
+        command:
+        <span style="cursor: pointer" (click)="onPrev()"><</span>
+        <span>{{currPage}}</span>
+        <span style="cursor: pointer" (click)="onNext()">></span>
+        <div class="command">
+          <app-command-detail *ngFor="let c of command" [command]="c"></app-command-detail>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

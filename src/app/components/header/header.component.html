@@ -7,7 +7,7 @@
   <div class="nav">
     <ul class="nav-bar">
       <li class="nav-bar-detail"><a href="http://">Store</a></li>
-      <li class="nav-bar-detail"><a href="http://">Community</a></li>
+      <li class="nav-bar-detail"><a routerLink="/community">Community</a></li>
       <li class="nav-bar-detail"><a href="http://">About</a></li>
       <li class="nav-bar-detail"><a href="http://">Support</a></li>
 
@@ -43,7 +43,7 @@
     <div class="right-name">
       {{userAuth.userName}}
       <ul>
-        <li><a routerLink="user/{{userAuth.customUrl}}">View Profile</a></li>
+        <li><a routerLink="/user/{{userAuth.customUrl}}">View Profile</a></li>
         <li><a>Account Details</a></li>
         <li (click)="logOut()"><a routerLink="/">LogOut: {{userAuth.userName}}</a></li>
         <li><a>Preferences</a></li>

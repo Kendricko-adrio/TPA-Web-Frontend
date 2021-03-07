@@ -5,4 +5,5 @@
   <div class="game-name padding-box">{{game.Name}}</div>
   <div class="game-price padding-box">{{game.Price}}</div>
   <button routerLink="update/{{game.ID}}">Update</button>
+  <button (click)="onDelete(game.ID)">Delete</button>
 </div>

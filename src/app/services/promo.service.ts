@@ -13,6 +13,20 @@ export class PromoService {
   ) {
   }
 
+  deletePromo(id): any{
+    return this.apollo.mutate({
+      mutation: gql `
+      mutation deletePromo($id: Int!){
+  deletePromo(id: $id){
+    promoId
+  }
+}
+      `,
+      variables: {
+        id: id
+      }
+    });
+  }
   getTotalPromo(): Observable<Query>{
     return this.apollo.query<Query>({
       query: gql `

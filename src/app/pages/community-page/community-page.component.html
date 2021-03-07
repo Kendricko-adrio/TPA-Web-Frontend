@@ -1,0 +1,12 @@
+<div class="page">
+  <app-header></app-header>
+  <div class="page-main">
+    <div class="post">
+      <div *ngFor="let p of posts">
+        <app-community-poster  *ngIf="p.postTypeId == 1" [post]="p"></app-community-poster>
+        <app-community-review *ngIf="p.postTypeId == 2" [post]="p"></app-community-review>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

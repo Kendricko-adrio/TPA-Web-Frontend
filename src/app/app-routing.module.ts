@@ -23,6 +23,9 @@ import {SearchGamePageComponent} from './pages/search-game-page/search-game-page
 import {FriendPageComponent} from './pages/friend-page/friend-page.component';
 import {GameDetailComponent} from './pages/game-detail/game-detail.component';
 import {WishlistPageComponent} from './pages/wishlist-page/wishlist-page.component';
+import {CommunityPageComponent} from './pages/community-page/community-page.component';
+import {CommunityPosterDetailComponent} from './pages/community-poster-detail/community-poster-detail.component';
+import {CommunityReviewDetailComponent} from './pages/community-review-detail/community-review-detail.component';
 
 
 
@@ -119,6 +122,21 @@ const routes: Routes = [
   {
     path: 'my-wishlist',
     component: WishlistPageComponent,
+    canActivate: [GetAuthGuard]
+  },
+  {
+    path: 'community',
+    component: CommunityPageComponent,
+    canActivate: [GetAuthGuard]
+  },
+  {
+    path: 'community/poster/:postId',
+    component: CommunityPosterDetailComponent,
+    canActivate: [GetAuthGuard]
+  },
+  {
+    path: 'community/review/:postId',
+    component: CommunityReviewDetailComponent,
     canActivate: [GetAuthGuard]
   }
 ];

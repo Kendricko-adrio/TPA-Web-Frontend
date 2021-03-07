@@ -17,6 +17,8 @@ export class ApolloService {
   ) {
   }
 
+
+
   getGameById(id): Observable<Query> {
     return this.apollo.query<Query>({
       query: gql`
@@ -42,6 +44,18 @@ export class ApolloService {
       `,
       variables: {
         id: id
+      }
+    });
+  }
+
+  deleteGame(id): any {
+    return this.apollo.mutate({
+      mutation: gql`
+      mutation deleteGame($id: Int!){
+  deleteGame(id: $id)
+}
+      `, variables: {
+        id: id,
       }
     });
   }

@@ -1,0 +1,18 @@
+<div class="card">
+  <div class="component">
+    post Type
+  </div>
+  <div class="component">
+    <img *ngIf="isImage" src="{{post.postAsset}}" alt="">
+    <video controls  *ngIf="!isImage">
+      <source src="{{post.postAsset}}">
+    </video>
+  </div>
+  <div class="component" routerLink="poster/{{post.postId}}">{{post.postDescription}}</div>
+  <div class="like">
+    <img (click)="onLike()" src="https://i.pinimg.com/originals/39/44/6c/39446caa52f53369b92bc97253d2b2f1.png" alt="">
+    {{post.totalLike}}
+    <img (click)="onDislike()" class="dislike" src="https://firebasestorage.googleapis.com/v0/b/staem-a0b09.appspot.com/o/youtube-dislike-png-45969.png?alt=media&token=5baa3907-1c35-4e2c-81ab-c69393807a68" alt="">
+    {{post.totalDislike}}
+  </div>
+</div>

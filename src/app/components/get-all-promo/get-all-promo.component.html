@@ -7,6 +7,7 @@
     <div class="all-game-component">{{c.game.Price}}</div>
     <div class="all-game-component">{{c.promoDiscount}}</div>
     <button routerLink="update/{{c.promoId}}">Update</button>
+    <button (click)="onDelete(c.promoId)">Delete</button>
   </div>
   <span #pages style="cursor: pointer" *ngFor="let p of pages" id="{{p}}"
         (click)="onClick(pages.id)"

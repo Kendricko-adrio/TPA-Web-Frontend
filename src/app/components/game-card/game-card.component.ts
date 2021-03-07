@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Game} from '../../models/game';
 import {ManageGameComponent} from '../../pages/manage-game/manage-game.component';
+import {ApolloService} from '../../services/apollo.service';
 
 @Component({
   selector: 'app-game-card',
@@ -9,7 +10,9 @@ import {ManageGameComponent} from '../../pages/manage-game/manage-game.component
 })
 export class GameCardComponent implements OnInit {
 
-  constructor() {
+  constructor(
+    private gameService: ApolloService
+  ) {
   }
 
   @Input() game;
@@ -21,6 +24,13 @@ export class GameCardComponent implements OnInit {
 
   update(): void {
     this.gameCurr = this.game;
-
   }
+
+  onDelete(id): void{
+    console.log(id);
+    this.gameService.deleteGame(id).subscribe(data => {
+      console.log('sukses mendelete ', id);
+    });
+  }
+
 }

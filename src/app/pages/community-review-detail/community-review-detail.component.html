@@ -1,0 +1,49 @@
+<div class="page">
+  <app-header></app-header>
+  <div class="page-main">
+    <div>Review For Game</div>
+    <div class="poster">
+      <div class="left">
+        <div class="game">
+          <img src="{{game.imageBanner}}" alt="">
+          <div class="component">
+            <div class="name">{{game.Name}}</div>
+            <div class="review">{{post.postDescription}}</div>
+          </div>
+        </div>
+        <div *ngIf="post.postHelpful" class="recommended">
+          <img src="https://community.akamai.steamstatic.com/public/shared/images/userreviews/icon_thumbsUp.png?v=1" alt="">
+          <div class="desc">Recommended</div>
+        </div>
+        <div *ngIf="!post.postHelpful" class="recommended">
+          <img src="https://store.akamai.steamstatic.com/public/shared/images/userreviews/icon_thumbsDown_v6.png" alt="">
+          <div class="desc">Not Recommended</div>
+        </div>
+<!--        <video *ngIf="!isImage" controls>-->
+<!--          <source src="{{post.postAsset}}">-->
+<!--        </video>-->
+        <div class="add-command">
+<!--          <img src="{{userAuth.PhotoUrl}}" alt="">-->
+          <div class="component">
+            <!--            {{currCommand}}-->
+            <textarea name="" [(ngModel)]="currCommand" [ngModelOptions]="{standalone: true}" placeholder="Add Your Command Here" id="" rows="4"></textarea>
+            <button (click)="onAddCommand()">Submit</button>
+          </div>
+        </div>
+      </div>
+      <div class="right">
+        <div>Created By:</div>
+        <app-my-friends-detail [user]="user"></app-my-friends-detail>
+        <div class="desc">description</div>
+        command:
+        <span style="cursor: pointer" (click)="onPrev()"><</span>
+        <span>{{currPage}}</span>
+        <span style="cursor: pointer" (click)="onNext()">></span>
+        <div class="command">
+          <app-command-detail *ngFor="let c of command" [command]="c"></app-command-detail>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

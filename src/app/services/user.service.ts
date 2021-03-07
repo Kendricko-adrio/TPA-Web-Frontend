@@ -33,6 +33,81 @@ export class UserService {
     });
   }
 
+  getUserById(userId): any{
+    return this.apollo.query<Query>({
+      query: gql `
+      query getUserById($userId: Int!){
+getUserById(userId: $userId){
+     userID,
+    userName,
+    password,
+    FirstName,
+    LastName,
+    PhotoUrl,
+    role,
+    FirstName,
+    LastName,
+    Email,
+PhotoUrl,
+    customUrl
+    games{
+      Name,
+      Description,
+      Image
+    },
+    friends{
+      userID,
+      userName,
+      PhotoUrl,
+    },
+    wishlist{
+      Name,
+      Description,
+      imageBanner
+    },
+    money,
+    ownBadge{
+      badgeId,
+      badgeName,
+      badgeUrl
+    }
+    currMiniBgImg,
+    ownMiniBg{
+      miniId,
+      miniUrl
+    },
+    currBadge{
+      badgeName,
+      badgeUrl
+    },
+    currTheme{
+      themeId,
+      themeName
+    },
+    ownTheme{
+      themeId,
+      themeName
+    },
+    ownProfileBackground{
+      backgroundId,
+      backgroundUrl
+    },
+    currProfileBackground{
+      backgroundId,
+      backgroundUrl
+    },
+    likeDetail{
+      postId
+    }
+  }
+}
+      `,
+      variables: {
+        userId: userId
+      }
+    });
+  }
+
   setCurrTheme(themeId): any {
     return this.apollo.mutate({
       mutation: gql`

@@ -1,0 +1,43 @@
+.card {
+  width: 100%;
+  max-width: 400px;
+  min-width: 200px;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  margin: 20px;
+  .helpfull{
+    font-size: 10px;
+  }
+  .component {
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.like {
+  img {
+    width: 30px;
+
+  }
+  .dislike{
+    width: 23px;
+  }
+}
+
+.hide{
+  display: none;
+}
+
+.show{
+  display: block;
+}
+
+.recommended{
+  width: 50px;
+  display: flex;
+  .desc{
+    margin-left: 20px;
+    align-self: center;
+  }
+}

@@ -1,0 +1,69 @@
+@import '../../styles/global.scss';
+
+.page {
+  background-color: $back-color;
+  font-family: $font;
+  color: $font-color;
+  height: 100%;
+  //min-height: 100vh;
+  &-main {
+    padding: 30px;
+
+    .poster {
+      display: flex;
+
+      .left {
+        width: 60%;
+
+        img {
+          width: 100%;
+        }
+        .add-command {
+          width: 100%;
+          background-color: rgba(0, 0, 0, 0.2);
+          display: flex;
+          img {
+            width: 50px;
+            height: 100%;
+          }
+          .component{
+            width: 100%;
+            textarea{
+              width: 100%;
+              background-color: #072d4b;
+              color: white;
+            }
+            button{
+              float: right;
+            }
+          }
+
+        }
+
+      }
+
+      .right {
+        width: 40%;
+        margin-left: 10px;
+
+        .command {
+          display: flex;
+          height: 300px;
+          flex-direction: column;
+          overflow: auto;
+        }
+
+        .desc {
+          font-family: "Motiva Sans", Sans-serif;
+          font-weight: 300;
+          font-size: 18px;
+          color: #7cc5fb;
+          font-style: italic;
+        }
+      }
+    }
+
+  }
+}
+
+
