@@ -1,0 +1,7 @@
+<div class="card">
+  <div class="header">
+    <img src="{{game?.imageBanner}}" alt="">
+    <div class="name">{{game?.Name}}</div>
+  </div>
+  <app-community-discussion-card *ngFor="let p of game?.post" [post]="p" routerLink="discussion/{{p.postId}}"></app-community-discussion-card>
+</div>

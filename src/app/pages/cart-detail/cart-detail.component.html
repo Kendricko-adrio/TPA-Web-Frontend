@@ -1,0 +1,41 @@
+<div class="page">
+  <app-header></app-header>
+  <div class="page-main">
+    <div class="header">
+      <img src="{{user.PhotoUrl}}" alt="">
+      <div class="tulisan">
+        {{user.userName}}'S Cart
+      </div>
+    </div>
+    <br>
+    <br>
+    <hr>
+    <div *ngIf="cart?.length == 0" class="list">
+      No Game
+    </div>
+    <div *ngIf="cart?.length > 0" class="list">
+      <div class="card" *ngFor="let c of cart">
+        <img src="{{c.game.imageBanner}}" alt="">
+        <div class="desc">
+          <div>{{c.game.Name}}</div>
+        </div>
+        <div class="desc">
+          <div>
+          Rp. {{c.game.Price}}
+          </div>
+          <div>
+          <button (click)="onDelete(c.game.ID)">Delete</button>
+
+          </div>
+        </div>
+
+      </div>
+      <hr>
+      <div class="total">Total: Rp. {{totalPrice}}</div>
+    </div>
+
+    <button routerLink="/checkout">CheckOut</button>
+  </div>
+</div>
+<app-footer></app-footer>
+

@@ -17,6 +17,17 @@ export class GameSlideshowPreviewComponent implements OnInit, OnChanges {
     this.previewImage = this.game.gameSlideShow[0].slideShowUrl;
   }
 
+  isImageURL(url: string): boolean{
+    if (url.match(/\.(gif|jpe?g|tiff?|png|webp|bmp|jfif)/i))
+    {
+      // console.log("Bener");
+      // console.log(url);
+      return true;
+    }
+
+    return false;
+  }
+
   onChangePreview(imageUrl): void{
     this.previewImage = imageUrl;
   }

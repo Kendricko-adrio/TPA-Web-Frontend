@@ -3,12 +3,20 @@
     img {
       width: 100%;
     }
+    video{
+      width: 100%;
+    }
   }
   .small-image{
     //width: 800;
     display: flex;
     overflow: auto;
     img{
+      margin-left: 5px;
+      margin-right: 5px;
+      width: 100px;
+    }
+    video{
       margin-left: 5px;
       margin-right: 5px;
       width: 100px;

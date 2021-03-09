@@ -13,11 +13,19 @@ export class CommunityPageComponent implements OnInit {
   ) { }
 
   posts;
+  tab = 1;
+  games;
+  onChangeTab(tab): void{
+    this.tab = tab;
+  }
 
   ngOnInit(): void {
     this.postService.getAllPost().subscribe(async data => {
       this.posts = data.data.getAllPost;
       console.log(this.posts);
+    });
+    this.postService.getGameInDiscussion().subscribe(async data =>{
+      this.games = data.data.getGameInDiscussion;
     });
   }
 

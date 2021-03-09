@@ -1,0 +1,76 @@
+@import '../../styles/global.scss';
+
+.page {
+  background-color: $back-color;
+  font-family: $font;
+  color: $font-color;
+  height: 100%;
+  //min-height: 100vh;
+  &-main {
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+
+    .center {
+      width: 60%;
+      background-color: rgba(0, 0, 0, 0.4);
+      padding: 10px;
+      .list{
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        flex-direction: column;
+        .total{
+          width: 100%;
+          float: right;
+          display: flex;
+          justify-content: flex-end;
+        }
+        .card{
+          display: flex;
+          justify-content: space-between;
+          align-content: center;
+          width: 100%;
+          margin-bottom: 10px;
+          background-color: rgba(0,0,0,0.4);
+          img{
+            width: 100px;
+          }
+          .desc{
+            margin-left: 30px;
+            align-self: center;
+          }
+        }
+      }
+
+      .buttons{
+        width: 100%;
+        button{
+          //float: right;
+          background-color: #072d4b;
+          color: white;
+        }
+      }
+      .comp{
+        display: flex;
+        .title{
+          width: 30%;
+        }
+      }
+      .friends{
+        width: 100%;
+        .friend{
+          app-my-friends-detail{
+            width: 100%;
+          }
+          button{
+            background-color: rgba(0,0,0,0);
+            color: $font-color;
+            border-color: rgba(0,0,0,0);
+          }
+          display: flex;
+        }
+      }
+    }
+  }
+}

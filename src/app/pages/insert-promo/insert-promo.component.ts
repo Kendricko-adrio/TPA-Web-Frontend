@@ -18,6 +18,7 @@ export class InsertPromoComponent implements OnInit {
 
   game;
   promo: Promo;
+  promoDuration;
 
   ngOnInit(): void {
     this.promo = new Promo();
@@ -31,10 +32,16 @@ export class InsertPromoComponent implements OnInit {
     console.log(this.promo.gameId);
   }
 
+  toUnixTS(date): number{
+    return new Date(date).getTime() / 1000;
+  }
+
   onSubmit(): void {
     this.promo.gameId = Number(this.promo.gameId);
     this.promo.promoDiscount = Number(this.promo.promoDiscount);
-    this.promo.promoDuration = Number(this.promo.promoDuration);
+    console.log(this.promoDuration);
+    this.promo.promoDuration = this.toUnixTS(this.promoDuration);
+    console.log(this.promo.promoDuration);
     // console.log(this.promo);
     this.promoService.insertPromo(this.promo).subscribe(async data => {
       console.log(data);

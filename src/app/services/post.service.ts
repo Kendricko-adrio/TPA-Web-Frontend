@@ -13,6 +13,24 @@ export class PostService {
   ) {
   }
 
+  getGameInDiscussion(): Observable<Query>{
+    return this.apollo.query<Query>({
+      query: gql `
+      query getGameInDiscussion{
+  getGameInDiscussion{
+    Name,
+    imageBanner,
+    post{
+      postId,
+      postDescription,
+      postTitle,
+      userId
+    }
+  }
+}
+      `
+    });
+  }
 
   insertCommand(postId, command): any{
     return this.apollo.mutate({
@@ -48,12 +66,55 @@ export class PostService {
     });
   }
 
+
+  getReviewByGameUpvoted(gameId): Observable<Query> {
+    return this.apollo.query<Query>({
+      query: gql`
+      query getReviewByGameUpvoted($gameId: Int!){
+  getReviewByGameUpvoted(gameId: $gameId){
+  postId,
+    userId,
+      postHelpful,
+      totalLike,
+      totalDislike,
+      postDescription,
+      gameId
+  }
+}
+      `,
+      variables: {
+        gameId: gameId
+      }
+    });
+  }
+  getReviewByGameRecent(gameId): Observable<Query>{
+    return this.apollo.query<Query>({
+      query: gql `
+      query getReviewByGameRecent($gameId: Int!){
+  getReviewByGameRecent(gameId: $gameId){
+  postId,
+    userId,
+    postHelpful,
+    totalLike,
+    totalDislike,
+    postDescription,
+    gameId
+  }
+}
+      `,
+      variables: {
+        gameId: gameId
+      }
+    });
+  }
+
   getPost(postId): Observable<Query> {
     return this.apollo.query<Query>({
       query: gql`
       query getPost($postId: Int!){
   getPost(postId: $postId){
      postId,
+     postTitle,
     userId,
     gameId,
     postAsset,

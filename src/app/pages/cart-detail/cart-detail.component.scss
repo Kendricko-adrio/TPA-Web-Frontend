@@ -1,0 +1,55 @@
+@import '../../styles/global.scss';
+
+.page{
+  background-color: $back-color;
+  font-family: $font;
+  color: $font-color;
+  height: 100%;
+  min-height: 100vh;
+  &-main{
+    padding: 30px;
+    margin-left: 50px;
+    margin-right: 50px;
+    .header{
+      display: flex;
+      .tulisan{
+        align-self: center;
+        font-size: 30px;
+        margin-left: 30px;
+      }
+      img{
+        width: 100%;
+        max-width: 200px;
+        min-width: 20px;
+      }
+    }
+    .list{
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      flex-direction: column;
+      .total{
+        width: 100%;
+        float: right;
+        display: flex;
+        justify-content: flex-end;
+      }
+      .card{
+        display: flex;
+        justify-content: space-between;
+        align-content: center;
+        width: 100%;
+        margin-bottom: 10px;
+        background-color: rgba(0,0,0,0.4);
+        img{
+          width: 100px;
+        }
+        .desc{
+          margin-left: 30px;
+          align-self: center;
+        }
+      }
+    }
+
+  }
+}

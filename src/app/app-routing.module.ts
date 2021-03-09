@@ -26,6 +26,9 @@ import {WishlistPageComponent} from './pages/wishlist-page/wishlist-page.compone
 import {CommunityPageComponent} from './pages/community-page/community-page.component';
 import {CommunityPosterDetailComponent} from './pages/community-poster-detail/community-poster-detail.component';
 import {CommunityReviewDetailComponent} from './pages/community-review-detail/community-review-detail.component';
+import {CommunityDiscussionDetailComponent} from './pages/community-discussion-detail/community-discussion-detail.component';
+import {CartDetailComponent} from './pages/cart-detail/cart-detail.component';
+import {CheckoutPageComponent} from './pages/checkout-page/checkout-page.component';
 
 
 
@@ -138,7 +141,22 @@ const routes: Routes = [
     path: 'community/review/:postId',
     component: CommunityReviewDetailComponent,
     canActivate: [GetAuthGuard]
-  }
+  },
+  {
+    path: 'community/discussion/:postId',
+    component: CommunityDiscussionDetailComponent,
+    canActivate: [GetAuthGuard]
+  },
+  {
+    path: 'my-cart',
+    component: CartDetailComponent,
+    canActivate: [GetAuthGuard]
+  },
+  {
+    path: 'checkout',
+    component: CheckoutPageComponent,
+    canActivate: [GetAuthGuard]
+  },
 ];
 
 @NgModule({

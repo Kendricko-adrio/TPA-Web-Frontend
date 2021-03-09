@@ -34,6 +34,9 @@ export class SearchFilterPreviewComponent implements OnInit {
   onSelect(event): void{
     console.log(event.target.value);
     this.genre = event.target.value;
+    this.gameService.getFilterGame(this.price, this.genre, this.searchKey).subscribe(async data =>{
+      this.games = data.data.getFilterGame;
+    });
   }
 
   @HostListener('window:scroll', ['$event'])

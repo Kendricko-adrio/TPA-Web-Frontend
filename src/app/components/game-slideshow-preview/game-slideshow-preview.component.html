@@ -1,8 +1,16 @@
 <div class="content">
   <div class="big-image">
-    <img src="{{previewImage}}" alt="">
+    <img *ngIf="isImageURL(previewImage)" src="{{previewImage}}" alt="">
+    <video controls *ngIf="!isImageURL(previewImage)" >
+      <source src="{{previewImage}}">
+    </video>
   </div>
   <div class="small-image">
-    <img style="cursor: pointer" *ngFor="let ss of game.gameSlideShow" src="{{ss.slideShowUrl}}" alt="" (click)="onChangePreview(ss.slideShowUrl)">
+    <div *ngFor="let ss of game.gameSlideShow">
+      <img *ngIf="isImageURL(ss.slideShowUrl)" style="cursor: pointer"  src="{{ss.slideShowUrl}}" alt="" (click)="onChangePreview(ss.slideShowUrl)">
+      <video *ngIf="!isImageURL(ss.slideShowUrl)" (click)="onChangePreview(ss.slideShowUrl)">
+        <source src="{{ss.slideShowUrl}}">
+      </video>
+    </div>
   </div>
 </div>

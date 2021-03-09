@@ -77,6 +77,12 @@ import { CommunityPosterDetailComponent } from './pages/community-poster-detail/
 import { CommunityReviewComponent } from './components/community-review/community-review.component';
 import { CommandDetailComponent } from './components/command-detail/command-detail.component';
 import { CommunityReviewDetailComponent } from './pages/community-review-detail/community-review-detail.component';
+import { CommunityDiscussionComponent } from './components/community-discussion/community-discussion.component';
+import { CommunityDiscussionCardComponent } from './components/community-discussion-card/community-discussion-card.component';
+import { CommunityDiscussionDetailComponent } from './pages/community-discussion-detail/community-discussion-detail.component';
+import { CartDetailComponent } from './pages/cart-detail/cart-detail.component';
+import { CheckoutPageComponent } from './pages/checkout-page/checkout-page.component';
+import { AnotherPaymentComponent } from './components/another-payment/another-payment.component';
 
 
 
@@ -148,6 +154,12 @@ import { CommunityReviewDetailComponent } from './pages/community-review-detail/
     CommunityReviewComponent,
     CommandDetailComponent,
     CommunityReviewDetailComponent,
+    CommunityDiscussionComponent,
+    CommunityDiscussionCardComponent,
+    CommunityDiscussionDetailComponent,
+    CartDetailComponent,
+    CheckoutPageComponent,
+    AnotherPaymentComponent,
 
   ],
   imports: [

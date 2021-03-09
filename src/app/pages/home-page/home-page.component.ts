@@ -13,8 +13,9 @@ export class HomePageComponent implements OnInit {
     private userService: UserService
   ) { }
   loaded: Promise<boolean>;
-
+  user;
   ngOnInit(): void {
+    this.user = UserService.userAuth;
     // this.userService.getAuthUser().subscribe(async (data) => {
     //   UserService.userAuth = data.data.getAuthUser;
     //   console.log(UserService.userAuth);

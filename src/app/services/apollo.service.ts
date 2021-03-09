@@ -190,6 +190,7 @@ genre{
     Description,
     Price,
     Image,
+    imageBanner,
     CreatedAt
   }
 }

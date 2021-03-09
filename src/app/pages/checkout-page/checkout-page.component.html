@@ -1,0 +1,58 @@
+<div class="page">
+  <app-header></app-header>
+  <div class="page-main">
+    <div class="center">
+      This is your transaction Detail, Please check
+      <br>
+      <br>
+      <div class="list">
+        <div class="card" *ngFor="let c of cart">
+          <img src="{{c.game.imageBanner}}" alt="">
+          <div class="desc">
+            <div>{{c.game.Name}}</div>
+          </div>
+          <div class="desc">
+            <div>
+              Rp. {{c.game.Price}}
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div *ngIf="isEnough === false">
+        <div>Your wallet is not enough, please insert your visa card</div>
+        <app-another-payment *ngIf="isEnough === false"></app-another-payment>
+      </div>
+      <div>
+        <div *ngIf="isEnough === true" class="comp">
+          <div class="title">Payment Method</div>
+          <div>
+            <select name="" id="" [(ngModel)]="paymentType" [ngModelOptions]="{standalone: true}">
+              <option *ngFor="let pt of paymentTypes" value="{{pt.typeId}}">{{pt.typeName}}</option>
+            </select>
+            <app-another-payment *ngIf="paymentType == 2"></app-another-payment>
+          </div>
+        </div>
+        <div class="comp">
+          <div class="title">gift to</div>
+          <div *ngIf="recepient === user">none</div>
+          <div *ngIf="!(recepient === user)">{{recepient.userName}}</div>
+        </div>
+      </div>
+
+      <div class="buttons">
+        <button *ngIf="isFriend === false" (click)="onPurchase()">Purchase For your Self</button>
+        <button (click)="isFriend = true">Purchase For friends</button>
+      </div>
+
+      <div *ngIf="isFriend === true" class="friends" >
+        <input type="text" placeholder="Gift Note">
+        <div class="friend" *ngFor="let u of user.friends">
+          <app-my-friends-detail [user]="u"></app-my-friends-detail>
+          <button (click)="onChangeFriends(u)">give</button>
+        </div>
+        <button (click)="onPurchase()">Send</button>
+      </div>
+    </div>
+  </div>
+  <app-footer></app-footer>

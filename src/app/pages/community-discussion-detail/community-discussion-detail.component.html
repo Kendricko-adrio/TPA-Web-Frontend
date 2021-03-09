@@ -1,0 +1,32 @@
+<div class="page">
+  <app-header></app-header>
+  <div class="page-main">
+    <h2>{{game?.Name}}</h2>
+    <div class="header">
+      <div class="user">
+        Created By:
+        <img src="{{user?.PhotoUrl}}" alt="">
+        <div>{{user?.userName}}</div>
+      </div>
+      <div class="title">
+        {{post?.postTitle}}
+      </div>
+    </div>
+    <div class="description">
+      {{post?.postDescription}}
+    </div>
+    <div class="component">
+      <img src="{{userAuth.PhotoUrl}}" alt="">
+      <div class="new">
+      <textarea name="" [(ngModel)]="currCommand" [ngModelOptions]="{standalone: true}" placeholder="Add Your Command Here" id="" rows="4"></textarea>
+      <button (click)="onSubmit()">Submit</button>
+      </div>
+    </div>
+    <div class="command">
+      <app-command-detail *ngFor="let c of post.commandDetail" [command]="c"></app-command-detail>
+    </div>
+
+  </div>
+
+</div>
+<app-footer></app-footer>
