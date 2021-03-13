@@ -4,7 +4,7 @@ import {ApolloClientOptions, InMemoryCache} from '@apollo/client/core';
 import {HttpLink} from 'apollo-angular/http';
 
 // const uri = 'http://localhost:2000/query'; // <-- add the URL of the GraphQL server here
-const uri = 'https://staem-kn.herokuapp.com//query'; // <-- add the URL of the GraphQL server here
+const uri = 'https://staem-kn.herokuapp.com/query'; // <-- add the URL of the GraphQL server here
 export function createApollo(httpLink: HttpLink): ApolloClientOptions<any> {
   return {
     link: httpLink.create({uri, withCredentials: true}),
