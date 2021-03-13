@@ -29,6 +29,12 @@ import {CommunityReviewDetailComponent} from './pages/community-review-detail/co
 import {CommunityDiscussionDetailComponent} from './pages/community-discussion-detail/community-discussion-detail.component';
 import {CartDetailComponent} from './pages/cart-detail/cart-detail.component';
 import {CheckoutPageComponent} from './pages/checkout-page/checkout-page.component';
+import {InventoryPageComponent} from './pages/inventory-page/inventory-page.component';
+import {MarketPageComponent} from './pages/market-page/market-page.component';
+import {MarketDetailPageComponent} from './pages/market-detail-page/market-detail-page.component';
+import {PointPageComponent} from './pages/point-page/point-page.component';
+import {TopupWalletPageComponent} from './pages/topup-wallet-page/topup-wallet-page.component';
+import {DiscoveryPageComponent} from './pages/discovery-page/discovery-page.component';
 
 
 
@@ -155,6 +161,36 @@ const routes: Routes = [
   {
     path: 'checkout',
     component: CheckoutPageComponent,
+    canActivate: [GetAuthGuard]
+  },
+  {
+    path: 'user/:username/inventory',
+    component: InventoryPageComponent,
+    canActivate: [GetAuthGuard]
+  },
+  {
+    path: 'community/market',
+    component: MarketPageComponent,
+    canActivate: [GetAuthGuard]
+  },
+  {
+    path: 'community/market/:itemId',
+    component: MarketDetailPageComponent,
+    canActivate: [GetAuthGuard]
+  },
+  {
+    path: 'point-shop',
+    component: PointPageComponent,
+    canActivate: [GetAuthGuard]
+  },
+  {
+    path: 'top-up',
+    component: TopupWalletPageComponent,
+    canActivate: [GetAuthGuard]
+  },
+  {
+    path: 'discovery',
+    component: DiscoveryPageComponent,
     canActivate: [GetAuthGuard]
   },
 ];

@@ -1,0 +1,19 @@
+<div class="page">
+  <app-header></app-header>
+  <div class="page-main">
+    <div class="left">
+      <button (click)="tab = 1">Profile Background</button>
+      <button (click)="tab = 2">Avatar Border</button>
+      <button>Avatar</button>
+      <button>Chat Sticker</button>
+      <button (click)="tab = 5">Mini Profile BG</button>
+    </div>
+    <div class="right">
+      <div>Your Point : {{user.point}}</div>
+      <app-point-profilebg-tab *ngIf="tab === 1"></app-point-profilebg-tab>
+      <app-point-frame-tab *ngIf="tab === 2"></app-point-frame-tab>
+      <app-point-minibg-tab *ngIf="tab === 5"></app-point-minibg-tab>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

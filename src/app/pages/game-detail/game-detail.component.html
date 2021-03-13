@@ -8,10 +8,15 @@
       <button (click)="onCart()">Add To Your Cart</button>
     </div>
 
+    <div class="add-review" *ngIf="isHaveGame">
+      <textarea name="" id="" cols="30" placeholder="add your review" [(ngModel)]="review" [ngModelOptions]="{standalone: true}"></textarea>
+      <button (click)="onReview()">submit</button>
+      <input type="checkbox" [(ngModel)]="help" [ngModelOptions]="{standalone: true}"> helpful
+    </div>
+
     <div>
       <button (click)="onRecent()">By Recent</button>
       <button (click)="onUpvoted()">By Helpful</button>
-
     </div>
     <div class="review">
       <app-community-review *ngFor="let p of post" [post]="p"></app-community-review>

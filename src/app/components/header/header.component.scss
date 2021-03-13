@@ -20,7 +20,7 @@ $padding: 0 10px 0 10px;
   .nav {
     ul {
       display: flex;
-
+      flex-wrap: wrap;
       li {
         padding: 10% 20px 10% 20px;
 

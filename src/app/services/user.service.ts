@@ -18,6 +18,21 @@ export class UserService {
   ) {
   }
 
+  insertWallet(walletCode): any{
+    return this.apollo.mutate({
+      mutation: gql`
+      mutation insertWallet($walletCode: String!){
+  insertWallet(walletCode: $walletCode){
+    money
+  }
+}
+      `,
+      variables: {
+        walletCode: walletCode
+      }
+    });
+  }
+
   setCurrProfileBackground(backgroundId): any{
     return this.apollo.mutate({
       mutation: gql`
@@ -189,6 +204,21 @@ mutation addGameToWishlist($gameId: Int!){
     });
   }
 
+  setCurrFrame(frameUrl): any{
+    return this.apollo.mutate({
+      mutation: gql `
+      mutation setCurrFrame($frameUrl: String!){
+  setCurrFrame(frameUrl: $frameUrl){
+    userID
+  }
+}
+      `,
+      variables: {
+        frameUrl: frameUrl
+      }
+    });
+  }
+
   getAuthUser(): Observable<Query> {
     return this.apollo.query<Query>({
       query: gql`
@@ -205,8 +235,9 @@ mutation addGameToWishlist($gameId: Int!){
     LastName,
     Email,
     PhotoUrl,
-    customUrl
+    customUrl,
     games{
+      ID,
       Name,
       Description,
       Image
@@ -252,7 +283,13 @@ mutation addGameToWishlist($gameId: Int!){
     currProfileBackground{
       backgroundId,
       backgroundUrl
-    }
+    },
+    ownFrame{
+      frameId,
+      frameUrl
+    },
+    currFrame,
+    point
   }
 }
       `
@@ -355,6 +392,13 @@ mutation addGameToWishlist($gameId: Int!){
       Description,
       Price,
       Image
+    },
+    items{
+      itemsId,
+      gameId,
+      itemName,
+      itemDescription,
+      itemPhoto,
     }
   }
 }
@@ -429,7 +473,9 @@ mutation addGameToWishlist($gameId: Int!){
     hideAward,
     summary,
     hideAward,
+    currFrame,
     games{
+    ID
       Name,
       Description,
       Price,
@@ -460,6 +506,13 @@ mutation addGameToWishlist($gameId: Int!){
     currBadgeId,
     currTheme{
       themeName
+    }
+    items{
+      itemsId,
+      gameId,
+      itemName,
+      itemDescription,
+      itemPhoto,
     }
   }
 }

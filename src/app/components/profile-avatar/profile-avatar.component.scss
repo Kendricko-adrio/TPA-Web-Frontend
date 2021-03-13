@@ -1,0 +1,20 @@
+$avatar : 150px;
+$frame : 170px;
+.card{
+  position: relative;
+  height: $frame;
+  width: $frame;
+  .frame{
+    position: absolute;
+    width: $frame;
+    height: $frame;
+    z-index: 10;
+  }
+  .avatar{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: $avatar;
+    height: $avatar;
+  }
+}

@@ -52,7 +52,12 @@
             (click)="updateId='U-002'; onClick(buttonBadge.id)"
             id="button6"
           >Feature Badge</button></li>
-          <li>Favorite Group</li>
+          <li><button
+            #buttonFrame
+            type="button general-button"
+            (click)="updateId='U-002'; onClick(buttonFrame.id)"
+            id="button7"
+          >Profile Frame</button></li>
         </ul>
       </div>
       <div class="edit-content">
@@ -64,6 +69,7 @@
         <app-edit-mini-profile [ngClass]="buttons.button4? 'selected' : 'unselected'"></app-edit-mini-profile>
         <app-edit-profile-theme [ngClass]="buttons.button5? 'selected' : 'unselected'"></app-edit-profile-theme>
         <app-edit-profile-background [ngClass]="buttons.button3? 'selected' : 'unselected'"></app-edit-profile-background>
+        <app-edit-avatar-frame [ngClass]="buttons.button7? 'selected' : 'unselected'"></app-edit-avatar-frame>
       </div>
     </div>
   </div>

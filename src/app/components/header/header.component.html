@@ -48,6 +48,8 @@
         <li (click)="logOut()"><a routerLink="/">LogOut: {{userAuth.userName}}</a></li>
         <li><a>Preferences</a></li>
         <li><a>Change Language</a></li>
+        <li><a routerLink="/community/market">Community Market</a></li>
+        <li><a routerLink="/top-up">Top Up Wallet</a></li>
         <li *ngIf="userAuth.role == 'admin'"><a routerLink="/admin/manage-game">Manage Game</a></li>
         <li *ngIf="userAuth.role == 'admin'"><a routerLink="/admin/manage-promo">Manage Promo</a></li>
         <li *ngIf="userAuth.role == 'admin'"><a routerLink="/admin/manage-user">Manage User</a></li>

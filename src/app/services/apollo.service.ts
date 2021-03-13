@@ -17,7 +17,37 @@ export class ApolloService {
   ) {
   }
 
+  getTopSeller(): Observable<Query>{
+    return this.apollo.query<Query>({
+      query: gql `
+      query getTopSeller{
+  getTopSeller{
+    gameid,
+    gamename,
+    gameprice,
+    imagebanner,
+    counts
+  }
+}
+      `
+    });
+  }
 
+  getMostPositifReview(): Observable<Query>{
+    return this.apollo.query<Query>({
+      query: gql `
+      query getMostPositifReview{
+  getMostPositifReview{
+    ID,
+    Name,
+    Description,
+    Price,
+    imageBanner
+  }
+}
+      `
+    });
+  }
 
   getGameById(id): Observable<Query> {
     return this.apollo.query<Query>({

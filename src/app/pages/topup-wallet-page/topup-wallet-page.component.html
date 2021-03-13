@@ -1,0 +1,13 @@
+<div class="page">
+  <app-header></app-header>
+  <div class="page-main">
+    <div class="form">
+      <div>
+        <input type="text" placeholder="Insert Wallet Code" [(ngModel)]="code" [ngModelOptions]="{standalone: true}">
+        <button (click)="onSubmit()">submit</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

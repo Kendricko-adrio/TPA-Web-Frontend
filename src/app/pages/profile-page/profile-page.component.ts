@@ -16,7 +16,7 @@ export class ProfilePageComponent implements OnInit {
 
   user;
   loaded: Promise<boolean>;
-
+  isModal = false;
   ngOnInit(): void {
     // this.userService.getAuthUser().subscribe(async (data) => {
     //   UserService.userAuth = data.data.getAuthUser;

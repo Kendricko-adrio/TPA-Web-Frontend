@@ -1,0 +1,83 @@
+<div class="page">
+  <app-header></app-header>
+  <div class="page-main">
+    <div class="market-header">
+      <app-item-detail [item]="item"></app-item-detail>
+      <div class="description">
+        <div class="name">{{item?.itemName}}</div>
+        <div class="game">
+          <img src="{{item?.game.imageBanner}}" alt="">
+          <div>{{item?.game.Name}}</div>
+        </div>
+        <div class="detail">
+          {{item?.itemDescription}}
+        </div>
+      </div>
+    </div>
+
+    <div class="transaction">
+      <div class="sell">
+        <div>sell</div>
+        <button (click)="isTr = 2">Sell</button>
+        <div class="sell-list">
+          <div *ngFor="let s of sellList">harga : Rp. {{s?.buyerPay}} by {{s?.userSellerId}}</div>
+        </div>
+      </div>
+      <div class="buy">
+        <div>buy</div>
+        <button (click)="isTr = 1">Buy</button>
+        <div class="buy-list">
+          <div *ngFor="let b of buyList">harga : Rp. {{b?.buyerPay}} by {{b?.userBuyerId}}</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="transaction-confirmation">
+      <div class="buy" *ngIf="isTr === 1">
+        beli dengan harga berapa
+        <input type="text" [(ngModel)]="buyMoney" [ngModelOptions]="{standalone: true}">
+        <button (click)="onBuy()">submit</button>
+      </div>
+      <div class="sell" *ngIf="isTr === 2">
+        jual dengan harga berapa
+        <input type="text" [(ngModel)]="sellMoney" [ngModelOptions]="{standalone: true}">
+        <button (click)="onSell()">submit</button>
+      </div>
+    </div>
+
+    <div class="transaction">
+      <div class="sell" style="height: 100%">
+        <div>My Sell List</div>
+        <div class="sell-list">
+          <div *ngFor="let s of sellList">
+            <app-item-detail [item]="s?.item"></app-item-detail>
+            {{s?.item.itemName}} Rp. {{s?.buyerPay}}
+          </div>
+        </div>
+      </div>
+      <div class="buy">
+        <div>My Buy List</div>
+        <div class="buy-list">
+          <div *ngFor="let s of buyList">
+            <app-item-detail [item]="s.item"></app-item-detail>
+            {{s.item.itemName}} Rp. {{s.buyerPay}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="chart">
+      <canvas *ngIf="chartReady"
+              baseChart width="100%" height="30"
+              [datasets]="lineChartData"
+              [labels]="lineChartLabels"
+              [options]="lineChartOptions"
+              [colors]="lineChartColors"
+              [legend]="lineChartLegend"
+              [chartType]="lineChartType"
+      >
+      </canvas>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

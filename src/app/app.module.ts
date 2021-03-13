@@ -83,6 +83,25 @@ import { CommunityDiscussionDetailComponent } from './pages/community-discussion
 import { CartDetailComponent } from './pages/cart-detail/cart-detail.component';
 import { CheckoutPageComponent } from './pages/checkout-page/checkout-page.component';
 import { AnotherPaymentComponent } from './components/another-payment/another-payment.component';
+import { InventoryPageComponent } from './pages/inventory-page/inventory-page.component';
+import { ItemDetailComponent } from './components/item-detail/item-detail.component';
+import { InventoryModalComponent } from './components/inventory-modal/inventory-modal.component';
+import {ChartsModule} from 'ng2-charts';
+import { EditAvatarFrameComponent } from './components/edit-avatar-frame/edit-avatar-frame.component';
+import { ProfileAvatarComponent } from './components/profile-avatar/profile-avatar.component';
+import { GamePositifReviewComponent } from './components/game-positif-review/game-positif-review.component';
+import { OnPositifReviewCardComponent } from './components/on-positif-review-card/on-positif-review-card.component';
+import { MarketPageComponent } from './pages/market-page/market-page.component';
+import { MarketDetailPageComponent } from './pages/market-detail-page/market-detail-page.component';
+import { GameTopSaleComponent } from './components/game-top-sale/game-top-sale.component';
+import { OnTopSaleCardComponent } from './components/on-top-sale-card/on-top-sale-card.component';
+import { PointPageComponent } from './pages/point-page/point-page.component';
+import { PointProfilebgTabComponent } from './components/point-profilebg-tab/point-profilebg-tab.component';
+import { PointFrameTabComponent } from './components/point-frame-tab/point-frame-tab.component';
+import { PointMinibgTabComponent } from './components/point-minibg-tab/point-minibg-tab.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { TopupWalletPageComponent } from './pages/topup-wallet-page/topup-wallet-page.component';
+import { DiscoveryPageComponent } from './pages/discovery-page/discovery-page.component';
 
 
 
@@ -160,23 +179,42 @@ import { AnotherPaymentComponent } from './components/another-payment/another-pa
     CartDetailComponent,
     CheckoutPageComponent,
     AnotherPaymentComponent,
+    InventoryPageComponent,
+    ItemDetailComponent,
+    InventoryModalComponent,
+    EditAvatarFrameComponent,
+    ProfileAvatarComponent,
+    GamePositifReviewComponent,
+    OnPositifReviewCardComponent,
+    MarketPageComponent,
+    MarketDetailPageComponent,
+    GameTopSaleComponent,
+    OnTopSaleCardComponent,
+    PointPageComponent,
+    PointProfilebgTabComponent,
+    PointFrameTabComponent,
+    PointMinibgTabComponent,
+    TopupWalletPageComponent,
+    DiscoveryPageComponent,
 
   ],
-  imports: [
-    CommonModule,
-    BrowserModule,
-    AppRoutingModule,
-    GraphQLModule,
-    HttpClientModule,
-    FormsModule,
-    ReactiveFormsModule,
-    Ng2CarouselamosModule,
-    RecaptchaModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireStorageModule,
-    AngularFireDatabaseModule,
-    ReactiveFormsModule,
-  ],
+    imports: [
+        CommonModule,
+        BrowserModule,
+        AppRoutingModule,
+        GraphQLModule,
+        HttpClientModule,
+        FormsModule,
+        ReactiveFormsModule,
+        Ng2CarouselamosModule,
+        RecaptchaModule,
+        AngularFireModule.initializeApp(environment.firebaseConfig),
+        AngularFireStorageModule,
+        AngularFireDatabaseModule,
+        ReactiveFormsModule,
+        ChartsModule,
+        ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    ],
   providers: [
     {
       provide: 'SocialAuthServiceConfig',

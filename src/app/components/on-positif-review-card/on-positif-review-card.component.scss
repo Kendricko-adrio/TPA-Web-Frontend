@@ -1,0 +1,34 @@
+@import "src/app/styles/global";
+
+.on-sale{
+  width: 100%;
+  display: flex;
+  font-family: $font;
+  color: $font-color;
+  background-color: rgba(0,0,0,0.2);
+  margin-bottom: 10px;
+  img{
+    width: 100px;
+  }
+  .component{
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    margin-left: 20px;
+    width: 100%;
+    .game{
+      align-self: center;
+    }
+    .price{
+      align-self: center;
+      padding: 10px;
+      .discount{
+        background-color: #4b6a23;
+      }
+      .dicoret{
+        text-decoration: line-through;
+      }
+    }
+  }
+
+}

@@ -4,6 +4,7 @@ import {ApolloService} from '../../services/apollo.service';
 import {UserService} from '../../services/user.service';
 import {PostService} from '../../services/post.service';
 import {CartService} from '../../services/cart.service';
+import {toNumbers} from '@angular/compiler-cli/src/diagnostics/typescript_version';
 
 @Component({
   selector: 'app-game-detail',
@@ -24,11 +25,21 @@ export class GameDetailComponent implements OnInit {
   game;
   post;
   userAuth;
+  review;
+  help;
+  isHaveGame = false;
 
   ngOnInit(): void {
     this.userAuth = UserService.userAuth;
     this.gameId = this.actRoute.snapshot.paramMap.get('gameId');
     console.log(this.gameId);
+    this.userAuth.games.forEach(x => {
+      if (x.ID == this.gameId) {
+        this.isHaveGame = true;
+      }
+    });
+    console.log(this.isHaveGame);
+    // this.checkIsUserOwn();
     this.gameService.getGameById(this.gameId).subscribe(async data => {
       this.game = data.data.getGameById;
       console.log(this.game);
@@ -36,6 +47,13 @@ export class GameDetailComponent implements OnInit {
 
     this.postService.getReviewByGameRecent(this.gameId).subscribe(async data => {
       this.post = data.data.getReviewByGameRecent;
+    });
+  }
+
+  checkIsUserOwn(): void {
+    this.userAuth.game.foreach(x => {
+      // if(x.gameId)
+      console.log(x);
     });
   }
 
@@ -64,4 +82,10 @@ export class GameDetailComponent implements OnInit {
     });
   }
 
+  onReview(): void {
+    console.log(this.help);
+    this.postService.insertReview(this.review, this.help, this.gameId).subscribe(async data => {
+      console.log('sukses');
+    });
+  }
 }

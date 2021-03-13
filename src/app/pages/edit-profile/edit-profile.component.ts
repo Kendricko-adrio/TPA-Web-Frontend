@@ -17,7 +17,7 @@ export class EditProfileComponent implements OnInit {
   // loaded: Promise<boolean>;
   updateId: string;
   buttons = {button1: false, button2: false, button3: false, button4: false,
-    button5: false, button6: false};
+    button5: false, button6: false, button7: false};
 
   onClick(buttonId): void {
     console.log(buttonId);

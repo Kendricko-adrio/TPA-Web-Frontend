@@ -16,7 +16,12 @@ export class GetAllPromoComponent implements OnInit {
   ) {
   }
 
-  onDelete(id): void{
+  onDelete(id): void {
+
+    const dial = confirm('are you sure want to delete the promo?');
+    if (dial === false) {
+      return;
+    }
     this.promoService.deletePromo(id).subscribe(data => {
       console.log('sukses deleted ', id);
     });
@@ -36,7 +41,7 @@ export class GetAllPromoComponent implements OnInit {
     });
   }
 
-  onClick(page): void{
+  onClick(page): void {
     this.promoService.getAllPromo(page).subscribe(async data => {
       this.promo = data.data.getAllPromo;
       console.log(this.promo);

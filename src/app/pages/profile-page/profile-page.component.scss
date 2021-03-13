@@ -1,5 +1,25 @@
 @import "src/app/styles/global";
 
+.modal{
+  background-color: rgba(0,0,0,0.7);
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  z-index: 20;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  .content{
+    align-self: center;
+    background-color: #072d4b;
+    width: 300px;
+    height: 300px;
+    textarea{
+      width: 100%;
+    }
+  }
+}
+
 .container{
   padding: 10px;
 }

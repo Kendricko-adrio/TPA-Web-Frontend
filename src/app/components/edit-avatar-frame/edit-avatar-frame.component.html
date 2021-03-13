@@ -1,0 +1,14 @@
+<div class="avatar-frame">
+  <div class="curr-frame">
+    <div>Curr Frame</div>
+    <div>
+<!--      <img src="{{user.currFrame}}" alt="">-->
+      <app-profile-avatar [user]="user" [frame]="currFrame"></app-profile-avatar>
+    </div>
+    <button (click)="onUpdate()">Update</button>
+  </div>
+  <div class="own-frame">
+    <div>Own Frame</div>
+    <img *ngFor="let f of user.ownFrame" src="{{f.frameUrl}}" (click)="currFrame = f.frameUrl" alt="">
+  </div>
+</div>

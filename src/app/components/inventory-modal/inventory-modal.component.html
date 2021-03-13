@@ -1,0 +1,13 @@
+<div [ngClass]="(visible)? 'modal': 'hide'">
+
+  <div class="main">
+    <div class="close" (click)="visible = false">X</div>
+
+    <h1>PUT AN ITEM UP FOR SALE</h1>
+    <div class="item-header">
+      <img src="{{item.itemPhoto}}" alt="">
+
+    </div>
+
+  </div>
+</div>

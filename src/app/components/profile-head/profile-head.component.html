@@ -1,6 +1,7 @@
 <div class="head">
   <div class="head-left">
-    <img src="{{user.PhotoUrl}}" alt="">
+<!--    <img src="{{user.PhotoUrl}}" alt="">-->
+    <app-profile-avatar [user]="user" [frame]="user?.currFrame"></app-profile-avatar>
     <div class="content-text">
       <div class="content-text-username text">
         {{user.userName}}

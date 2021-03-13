@@ -1,9 +1,20 @@
-
+<div class="modal" *ngIf="isModal">
+  <div class="content">
+    <button (click)="isModal = false">x</button>
+    <div>
+      <textarea placeholder="add your report" name="" id="" cols="30" rows="10"></textarea>
+    </div>
+    <div>
+      <button>submit</button>
+    </div>
+  </div>
+</div>
 <div class="profile">
   <app-header></app-header>
   <!--  {{user.ID}}-->
   <div class="main">
     <div class="main-content" style="background-color: {{this.user.currTheme.themeName}}">
+      <button (click)="isModal = true">report</button>
       <app-profile-head [user]="user"></app-profile-head>
       <div class="two-side">
         <div class="left">

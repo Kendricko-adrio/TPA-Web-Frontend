@@ -13,6 +13,23 @@ export class PostService {
   ) {
   }
 
+  insertReview(review, helpful, gameId): any{
+    return this.apollo.mutate({
+      mutation: gql `
+      mutation insertReview($review: String! $helpful: Boolean! $gameId: Int!){
+  insertReview(review: $review, helpful: $helpful, gameId: $gameId){
+    postId
+  }
+}
+      `,
+      variables: {
+        review: review,
+        helpful: helpful,
+        gameId: gameId
+      }
+    });
+  }
+
   getGameInDiscussion(): Observable<Query>{
     return this.apollo.query<Query>({
       query: gql `

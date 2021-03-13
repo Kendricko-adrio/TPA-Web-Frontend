@@ -1,0 +1,13 @@
+<div class="bg">
+  <div>
+    Purchasable Profile Background
+  </div>
+  <div class="list">
+    <div class="card" *ngFor="let b of bg">
+      <img src="{{b.backgroundUrl}}" alt="">
+      <div>Point: {{b.backgroundPoint}}</div>
+      <div><Button>Buy</Button></div>
+    </div>
+  </div>
+
+</div>

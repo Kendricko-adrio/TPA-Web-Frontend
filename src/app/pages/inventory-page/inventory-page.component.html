@@ -1,0 +1,78 @@
+<div [ngClass]="(isModal)? 'modal': 'hide'">
+
+  <div class="main">
+    <div class="close" (click)="isModal = false">X</div>
+
+    <h1>PUT AN ITEM UP FOR SALE</h1>
+    <div class="item-header">
+      <app-item-detail [item]="itemPreview"></app-item-detail>
+      <div class="desc">
+        <div class="desc-title">{{itemPreview?.itemName}}</div>
+        <div class="game">
+          <img src="{{itemPreview?.game.imageBanner}}" alt="">
+          <div class="game-name">{{itemPreview?.game.Name}}</div>
+        </div>
+      </div>
+    </div>
+    <div class="chart">
+      <h3>Transaction</h3>
+      <canvas *ngIf="chartReady"
+              baseChart width="100%" height="30"
+              [datasets]="lineChartData"
+              [labels]="lineChartLabels"
+              [options]="lineChartOptions"
+              [colors]="lineChartColors"
+              [legend]="lineChartLegend"
+              [chartType]="lineChartType"
+      >
+
+      </canvas>
+    </div>
+    <div>
+      <span>Users get</span>
+      <span><input type="text" [(ngModel)]="userGet" [ngModelOptions]="{standalone: true}" (input)="onUserChange($event)"></span>
+      <span>Buyer Pay</span>
+      <span><input type="text" [(ngModel)]="buyerPay" [ngModelOptions]="{standalone: true}" (input)="onBuyerChange($event)"></span>
+    </div>
+  </div>
+</div>
+
+<div class="page">
+  <app-header></app-header>
+  <div class="page-main">
+
+    <div class="header-inventory">
+      <img src="{{user?.PhotoUrl}}" alt="">
+      <div class="title">{{user?.userName}}'s Inventory</div>
+    </div>
+    <div class="game">
+      <select [(ngModel)]="gameId" [ngModelOptions]="{standalone: true}" (change)="onGameChange($event)" name="" id="">
+        <option *ngFor="let g of user?.games" value="{{g?.ID}}">{{g?.Name}}</option>
+      </select>
+    </div>
+    <div class="inventory">
+      <div class="left">
+        <div class="search">
+          <input #search type="text" placeholder="Search Your Item">
+        </div>
+        <div class="item-detail">
+          <app-item-detail *ngFor="let it of items" [item]="it" (click)="itemPreview = it"></app-item-detail>
+        </div>
+        <div class="paginate">
+          <span (click)="onPrev()"><</span>
+          <span>{{page}}</span>
+          <span (click)="onNext()">></span>
+        </div>
+      </div>
+      <div class="right">
+        <div class="preview">
+          <img src="{{itemPreview?.itemPhoto}}" alt="">
+          <div class="comp title">{{itemPreview?.itemName}}</div>
+          <div class="comp">{{itemPreview?.itemDescription}}</div>
+          <button (click)="isModal = true; setChartData(); chartReady = false">Sell</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

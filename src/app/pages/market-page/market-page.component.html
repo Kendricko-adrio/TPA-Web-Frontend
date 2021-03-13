@@ -1,0 +1,18 @@
+<div class="page">
+  <app-header></app-header>
+  <div class="page-main">
+    <h1>Community Market</h1>
+    <div>
+      <span (click)="onPrev()"><</span>
+      <span>{{currPage}}</span>
+      <span (click)="onNext()">></span>
+    </div>
+    <div class="list-item">
+      <div  class="item-detail" *ngFor="let i of items" routerLink="{{i.itemsId}}">
+        <img src="{{i.itemPhoto}}" alt="">
+        <div class="desc">{{i.itemName}}</div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>
