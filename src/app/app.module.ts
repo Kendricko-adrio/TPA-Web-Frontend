@@ -102,6 +102,7 @@ import { PointMinibgTabComponent } from './components/point-minibg-tab/point-min
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { TopupWalletPageComponent } from './pages/topup-wallet-page/topup-wallet-page.component';
 import { DiscoveryPageComponent } from './pages/discovery-page/discovery-page.component';
+import { SearchGenrePageComponent } from './pages/search-genre-page/search-genre-page.component';
 
 
 
@@ -196,6 +197,7 @@ import { DiscoveryPageComponent } from './pages/discovery-page/discovery-page.co
     PointMinibgTabComponent,
     TopupWalletPageComponent,
     DiscoveryPageComponent,
+    SearchGenrePageComponent,
 
   ],
     imports: [
