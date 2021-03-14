@@ -6,7 +6,9 @@ import {WebSocketLink} from '@apollo/client/link/ws';
 import {getMainDefinition} from '@apollo/client/utilities';
 
 // const uri = 'http://localhost:2000/query'; // <-- add the URL of the GraphQL server here
+// const uria = 'ws://localhost:2000/query'; // <-- add the URL of the GraphQL server here
 const uri = 'https://staem-kn.herokuapp.com/query'; // <-- add the URL of the GraphQL server here
+const uria = 'ws://staem-kn.herokuapp.com/query'; // <-- add the URL of the GraphQL server here
 
 export function createApollo(httpLink: HttpLink): ApolloClientOptions<any> {
 // Create an http link:
@@ -17,7 +19,7 @@ export function createApollo(httpLink: HttpLink): ApolloClientOptions<any> {
 
   // Create a WebSocket link:
   const ws = new WebSocketLink({
-    uri: `ws://localhost:2000/query`,
+    uri: uria,
     options: {
       reconnect: true,
     },
