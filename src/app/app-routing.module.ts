@@ -37,6 +37,7 @@ import {TopupWalletPageComponent} from './pages/topup-wallet-page/topup-wallet-p
 import {DiscoveryPageComponent} from './pages/discovery-page/discovery-page.component';
 import {SearchGenrePageComponent} from './pages/search-genre-page/search-genre-page.component';
 import {SearchCategoryPageComponent} from './pages/search-category-page/search-category-page.component';
+import {ChatPageComponent} from './pages/chat-page/chat-page.component';
 
 
 
@@ -203,6 +204,11 @@ const routes: Routes = [
   {
     path: 'discovery',
     component: DiscoveryPageComponent,
+    canActivate: [GetAuthGuard]
+  },
+  {
+    path: 'chat',
+    component: ChatPageComponent,
     canActivate: [GetAuthGuard]
   },
 ];

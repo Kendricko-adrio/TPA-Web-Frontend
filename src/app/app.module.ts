@@ -107,6 +107,8 @@ import { SearchCategoryPageComponent } from './pages/search-category-page/search
 import { PointAvatarTabComponent } from './components/point-avatar-tab/point-avatar-tab.component';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import { ChatPageComponent } from './pages/chat-page/chat-page.component';
+import { ChatRoomComponent } from './components/chat-room/chat-room.component';
 
 export function HttpLoaderFactory(http: HttpClient){
   return new TranslateHttpLoader(http);
@@ -206,6 +208,8 @@ export function HttpLoaderFactory(http: HttpClient){
     SearchGenrePageComponent,
     SearchCategoryPageComponent,
     PointAvatarTabComponent,
+    ChatPageComponent,
+    ChatRoomComponent,
 
 
   ],

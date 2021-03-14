@@ -1,0 +1,33 @@
+.room{
+  //background-color: #7cc5fb;
+  display: flex;
+  flex-direction: column;
+  .head{
+    display: flex;
+    padding: 20px;
+    width: 100%;
+    background-color: #1c6eff;
+    position: relative;
+
+    img{
+      width: 100px;
+    }
+    div{
+      align-self: center;
+      margin-left: 20px;
+    }
+  }
+
+  .mid{
+    height: 100vh;
+  }
+
+  .down{
+    bottom: 0;
+    textarea{
+      width: 100%;
+    }
+  }
+
+  //height: inherit;
+}

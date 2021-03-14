@@ -1,0 +1,17 @@
+<div class="room">
+  <div class="head">
+    <img src="{{user.PhotoUrl}}" alt="">
+    <div>{{user.userName}}</div>
+  </div>
+
+  <div class="mid">
+    <div *ngFor="let m of messages">
+      <div>{{m.text}}</div>
+    </div>
+  </div>
+
+  <div class="down">
+    <textarea name="" id=""[(ngModel)]="text" [ngModelOptions]="{standalone: true}" ></textarea>
+    <button (click)="onSubmit()">send</button>
+  </div>
+</div>

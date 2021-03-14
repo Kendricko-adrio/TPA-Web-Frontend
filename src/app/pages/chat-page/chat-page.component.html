@@ -1,0 +1,14 @@
+<div class="page">
+  <app-header></app-header>
+  <div class="page-main" *ngIf="user">
+    <div class="left">
+      <app-my-friends-detail (click)="currUser = f" *ngFor="let f of user.friends" [user]="f"></app-my-friends-detail>
+    </div>
+
+    <div class="right">
+      <app-chat-room *ngIf="currUser" [user]="currUser"></app-chat-room>
+
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

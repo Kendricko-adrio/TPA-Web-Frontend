@@ -9,7 +9,6 @@ import {UserService} from '../../services/user.service';
 })
 export class ProfilePageComponent implements OnInit {
   username;
-
   constructor(private actRoute: ActivatedRoute,
               private userService: UserService) {
   }
