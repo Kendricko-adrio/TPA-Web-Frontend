@@ -6,10 +6,10 @@
 
   <div class="nav">
     <ul class="nav-bar">
-      <li class="nav-bar-detail"><a href="http://">Store</a></li>
-      <li class="nav-bar-detail"><a routerLink="/community">Community</a></li>
-      <li class="nav-bar-detail"><a href="http://">About</a></li>
-      <li class="nav-bar-detail"><a href="http://">Support</a></li>
+      <li class="nav-bar-detail"><a href="http://">{{'HOME.STORE' | translate}}</a></li>
+      <li class="nav-bar-detail"><a routerLink="/community">{{'HOME.COMMUNITY' | translate}}</a></li>
+      <li class="nav-bar-detail"><a href="http://">{{'HOME.ABOUT' | translate}}</a></li>
+      <li class="nav-bar-detail"><a href="http://">{{'HOME.SUPPORT' | translate}}</a></li>
 
     </ul>
 
@@ -43,11 +43,15 @@
     <div class="right-name">
       {{userAuth.userName}}
       <ul>
-        <li><a routerLink="/user/{{userAuth.customUrl}}">View Profile</a></li>
-        <li><a>Account Details</a></li>
-        <li (click)="logOut()"><a routerLink="/">LogOut: {{userAuth.userName}}</a></li>
+        <li><a routerLink="/user/{{userAuth.customUrl}}">{{'HOME.VIEW_PROFILE' | translate}}</a></li>
+        <li><a>{{'HOME.ACCOUNT_DETAILS' | translate}}</a></li>
+        <li (click)="logOut()"><a routerLink="/">{{'HOME.LOGOUT' | translate}}: {{userAuth.userName}}</a></li>
         <li><a>Preferences</a></li>
-        <li><a>Change Language</a></li>
+        <li><a>
+          <select #langselect (change)="translate.use(langselect.value)">
+            <option *ngFor="let lang of translate.getLangs()" [value]="lang">{{lang}}</option>
+          </select>
+        </a></li>
         <li><a routerLink="/community/market">Community Market</a></li>
         <li><a routerLink="/top-up">Top Up Wallet</a></li>
         <li *ngIf="userAuth.role == 'admin'"><a routerLink="/admin/manage-game">Manage Game</a></li>

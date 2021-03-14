@@ -2,10 +2,27 @@
   display: flex;
   justify-content: space-around;
   width: inherit;
+  position: relative;
   margin-bottom: 10px;
   background-color: rgba(0,0,0,0.3);
   padding: 10px;
   img{
     width: 50px;
   }
+  .detail{
+    display: none;
+    padding: 10px;
+    position: absolute;
+    background-color: rgba(0,0,0,0.5);
+    height: 100%;
+    width: 200px;
+    right: -80px;
+  }
 }
+
+.content:hover{
+  .detail{
+    display: block;
+  }
+}
+

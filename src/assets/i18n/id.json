@@ -1,0 +1,15 @@
+{
+  "HOME": {
+    "STORE": "Toko",
+    "COMMUNITY": "Komunitas",
+    "ABOUT": "Tentang",
+    "SUPPORT": "Bantuan",
+    "CHAT": "Chat",
+    "SELECT": "Select Language",
+
+    "VIEW_PROFILE": "Lihat Profile",
+    "ACCOUNT_DETAILS": "Detail Akun",
+    "LOGOUT": "Keluar",
+    "PREFERENCES": "Preferences"
+  }
+}

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {ChartDataSets, ChartOptions, ChartType} from 'chart.js';
 import {ItemTransactionService} from '../../services/item-transaction.service';
@@ -11,7 +11,7 @@ import {markAsyncChunksNonInitial} from '@angular-devkit/build-angular/src/webpa
   templateUrl: './market-detail-page.component.html',
   styleUrls: ['./market-detail-page.component.scss']
 })
-export class MarketDetailPageComponent implements OnInit {
+export class MarketDetailPageComponent implements OnInit, OnChanges {
 
   constructor(
     private actRoute: ActivatedRoute,
@@ -105,21 +105,25 @@ export class MarketDetailPageComponent implements OnInit {
     this.setChartData();
     this.itemService.getItem(this.itemId).subscribe(async data => {
       this.item = data.data.getItem;
+      console.log(this.item);
     });
 
     this.itemTransactionService.getBuy(this.itemId).valueChanges.subscribe(async data => {
       this.buyList = data.data.getBuy;
+      console.log(this.buyList);
       console.log('test');
     });
     this.itemTransactionService.getSell(this.itemId).valueChanges.subscribe(async data => {
       this.sellList = data.data.getSell;
+      console.log(this.sellList);
       console.log('test sell');
     });
     this.itemTransactionService.getMyBuy(this.itemId).subscribe(async data => {
-      this.buyList = data.data.getMyBuy;
+      this.myBuyList = data.data.getMyBuy;
+
     });
     this.itemTransactionService.getMySell(this.itemId).subscribe(async data => {
-      this.sellList = data.data.getMySell;
+      this.mySellList = data.data.getMySell;
     });
   }
 
@@ -151,6 +155,10 @@ export class MarketDetailPageComponent implements OnInit {
       this.chartReady = true;
       // data.data
     });
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+
   }
 
 }

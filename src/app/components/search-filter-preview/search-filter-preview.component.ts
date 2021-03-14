@@ -44,7 +44,7 @@ export class SearchFilterPreviewComponent implements OnInit {
     const currHeight = window.pageYOffset;
     const clientHeight = document.body.offsetHeight;
     // const clientHeight = event.target.scrollingElement.clientHeight;
-    if (currHeight > clientHeight * 0.5 && !this.isFetching) {
+    if (currHeight > clientHeight * 0.2 && !this.isFetching) {
       if (this.games.length >= this.totalGames) {
         return;
       }
@@ -69,6 +69,7 @@ export class SearchFilterPreviewComponent implements OnInit {
       this.games = await data.data.searchGameInfinite;
       console.log(this.games);
       this.page = this.page + 1;
+      console.log(this.page);
     });
 
     this.gameService.getTotalGames().subscribe(async data => {

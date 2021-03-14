@@ -1,7 +1,7 @@
-<div class="manage-game">
+<div class="manage-game" *ngIf="games">
   <app-header></app-header>
   <button routerLink="insert">Insert Game</button>
-  <div class="main-content">
+  <div class="main-content" *ngIf="games">
       <app-get-allgame-paginate [games]="games" [pages]="pages" [gameCurr]="gameCurr"></app-get-allgame-paginate>
   </div>
   <div (click)="test()">test</div>

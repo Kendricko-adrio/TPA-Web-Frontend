@@ -6,6 +6,7 @@
     <div class="wishlist">
       <button (click)="onWishList()">Add To Your Wishlist</button>
       <button (click)="onCart()">Add To Your Cart</button>
+      <div>harga: Rp. {{game.Price}}</div>
     </div>
 
     <div class="add-review" *ngIf="isHaveGame">

@@ -112,6 +112,15 @@ export class InventoryPageComponent implements OnInit {
   //   const get
   // }
 
+  onSell(): void{
+    const money = Math.round(this.buyerPay);
+    console.log(this.itemPreview.itemsId);
+    this.itemTransactionService.sellItem(this.itemPreview.itemsId, money).subscribe(data => {
+      console.log('sukses');
+    });
+  }
+
+
   setChartData(): void {
     this.itemTransactionService.getTransactionByItem(this.itemPreview.itemsId).subscribe(async data => {
       this.itemTransaction = data.data.getTransactionByItem;

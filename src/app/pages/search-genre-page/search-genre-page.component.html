@@ -1,1 +1,14 @@
-<p>search-genre-page works!</p>
+<div class="manage-game">
+  <app-header></app-header>
+  <div class="main-content">
+    <!--    <app-get-allgame-paginate [games]="games" [pages]="pages" [gameCurr]="gameCurr"></app-get-allgame-paginate>-->
+    <app-search-bar></app-search-bar>
+<!--    <app-search-filter-preview [searchKey]="searchKey"></app-search-filter-preview>-->
+    <div class="list">
+      <app-game-searched-card *ngFor="let g of games" [game]="g"></app-game-searched-card>
+    </div>
+  </div>
+  <!--  <div (click)="test()">test</div>-->
+  <div>&nbsp;</div>
+</div>
+<app-footer></app-footer>

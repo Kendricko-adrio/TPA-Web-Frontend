@@ -30,6 +30,20 @@ export class PointService {
     });
   }
 
+  getPurchasableAvatar(): Observable<Query>{
+    return this.apollo.query<Query>({
+      query: gql `
+      query getPurchasableAvatar{
+  getPurchasableAvatar{
+    avatarId,
+    avatarUrl,
+    avatarPoint
+  }
+}
+      `
+    });
+  }
+
   getPurchasableFrame(): Observable<Query> {
     return this.apollo.query<Query>({
       query: gql`
@@ -57,7 +71,6 @@ export class PointService {
       `
     });
   }
-
 
   getPurchasableBg(): Observable<Query> {
     return this.apollo.query({

@@ -7,7 +7,7 @@ import {HeaderComponent} from './components/header/header.component';
 import {SideBarComponent} from './components/side-bar/side-bar.component';
 import {SearchBarComponent} from './components/search-bar/search-bar.component';
 import {GraphQLModule} from './graphql.module';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {FeatureCardComponent} from './components/feature-card/feature-card.component';
 import {LoginPageComponent} from './pages/login-page/login-page.component';
 import {HomePageComponent} from './pages/home-page/home-page.component';
@@ -103,8 +103,14 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { TopupWalletPageComponent } from './pages/topup-wallet-page/topup-wallet-page.component';
 import { DiscoveryPageComponent } from './pages/discovery-page/discovery-page.component';
 import { SearchGenrePageComponent } from './pages/search-genre-page/search-genre-page.component';
+import { SearchCategoryPageComponent } from './pages/search-category-page/search-category-page.component';
+import { PointAvatarTabComponent } from './components/point-avatar-tab/point-avatar-tab.component';
+import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 
-
+export function HttpLoaderFactory(http: HttpClient){
+  return new TranslateHttpLoader(http);
+}
 
 
 
@@ -198,6 +204,9 @@ import { SearchGenrePageComponent } from './pages/search-genre-page/search-genre
     TopupWalletPageComponent,
     DiscoveryPageComponent,
     SearchGenrePageComponent,
+    SearchCategoryPageComponent,
+    PointAvatarTabComponent,
+
 
   ],
     imports: [
@@ -216,6 +225,13 @@ import { SearchGenrePageComponent } from './pages/search-genre-page/search-genre
         ReactiveFormsModule,
         ChartsModule,
         ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+        TranslateModule.forRoot({
+          loader: {
+            provide: TranslateLoader,
+            useFactory: HttpLoaderFactory,
+            deps: [HttpClient]
+          }
+        }),
     ],
   providers: [
     {

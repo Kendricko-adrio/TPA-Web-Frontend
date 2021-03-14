@@ -7,6 +7,21 @@
   height: 100%;
   //min-height: 100vh;
   &-main{
+    .add-post{
+      padding: 40px;
+      background-color: rgba(0,0,0,0.2);
+      textarea{
+        width: 100%;
+      }
+    }
+    .add-review{
+      margin-top: 10px;
+      padding: 40px;
+      background-color: rgba(0,0,0,0.2);
+      textarea{
+        width: 100%;
+      }
+    }
     .tab{
       width: 100%;
       display: flex;

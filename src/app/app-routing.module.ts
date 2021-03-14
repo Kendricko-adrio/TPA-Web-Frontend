@@ -35,6 +35,8 @@ import {MarketDetailPageComponent} from './pages/market-detail-page/market-detai
 import {PointPageComponent} from './pages/point-page/point-page.component';
 import {TopupWalletPageComponent} from './pages/topup-wallet-page/topup-wallet-page.component';
 import {DiscoveryPageComponent} from './pages/discovery-page/discovery-page.component';
+import {SearchGenrePageComponent} from './pages/search-genre-page/search-genre-page.component';
+import {SearchCategoryPageComponent} from './pages/search-category-page/search-category-page.component';
 
 
 
@@ -119,6 +121,16 @@ const routes: Routes = [
     canActivate: [GetAuthGuard]
   },
   {
+    path: 'search/genre/:search',
+    component: SearchGenrePageComponent,
+    canActivate: [GetAuthGuard]
+  },
+  {
+    path: 'search/category/:search',
+    component: SearchCategoryPageComponent,
+    canActivate: [GetAuthGuard]
+  },
+  {
     path: 'friend',
     component: FriendPageComponent,
     canActivate: [GetAuthGuard]
@@ -161,7 +173,7 @@ const routes: Routes = [
   {
     path: 'checkout',
     component: CheckoutPageComponent,
-    canActivate: [GetAuthGuard]
+    canActivate: [GetAuthGuard, WaitProfileGuard]
   },
   {
     path: 'user/:username/inventory',

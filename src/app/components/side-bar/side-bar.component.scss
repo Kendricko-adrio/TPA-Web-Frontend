@@ -1,26 +1,50 @@
 @import "src/app/styles/global";
 
-.side-bar{
+.side-bar {
   font-family: $font;
-  img{
+  .hov{
+    display: none;
+  }
+  img {
     width: 100%;
   }
-    .sub-bar{
-        padding: 10px;
-        h3{
-            color: white;
 
-        }
-        ul{
-            li{
-                padding: 10px;
-                list-style: none;
+  .sub-bar {
+    padding: 10px;
+    width: 100%;
+    h3 {
+      color: white;
 
-                a{
-                    text-decoration: none;
-                    color: rgb(175, 175, 248);
-                }
-            }
-        }
     }
+
+    ul {
+      li {
+        padding: 10px;
+        list-style: none;
+
+        a {
+          text-decoration: none;
+          color: rgb(175, 175, 248);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 425px) {
+  .side-bar{
+
+    .sub-bar{
+      h3{
+        font-size: 10px;
+      }
+      ul{
+        li{
+          a{
+            font-size: 5px;
+          }
+        }
+      }
+    }
+  }
 }

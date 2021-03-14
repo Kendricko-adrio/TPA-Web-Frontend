@@ -27,9 +27,12 @@ export class ManageGameComponent implements OnInit {
       console.log(this.pages);
     });
     this.gameService.getGamePaginate(1).subscribe(async data => {
-      console.log(data);
-      this.games = data.data.getAllGamesPaginated;
-    });
+        this.games = data.data.getAllGamesPaginated;
+        console.log(this.games);
+      },
+      (error => {
+        console.log(error);
+      }));
   }
 
   test(): void{

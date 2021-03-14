@@ -4,7 +4,7 @@
       <input type="text" [(ngModel)]="searchKey" [ngModelOptions]="{standalone: true}">
       <button>search</button>
     </div>
-    <div >
+    <div>
       <app-game-searched-card *ngFor="let g of games" [game]="g"></app-game-searched-card>
     </div>
 

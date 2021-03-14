@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import {AuthUser} from '../../models/auth-user';
 import {Router} from '@angular/router';
 import {FriendService} from '../../services/friend.service';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-header',
@@ -11,9 +12,16 @@ import {FriendService} from '../../services/friend.service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private userService: UserService,
-              private friendService: FriendService,
-  ) { }
+  constructor(
+    private userService: UserService,
+    private friendService: FriendService,
+    private translate: TranslateService
+  ) {
+    translate.addLangs(['en', 'id']);
+    translate.setDefaultLang('en');
+    const browserLang = translate.getBrowserLang();
+    translate.use(browserLang.match(/en|id/) ? browserLang : 'en');
+  }
   userAuth = UserService.userAuth;
   user;
   totalRequest;

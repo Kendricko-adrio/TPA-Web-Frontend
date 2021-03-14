@@ -33,6 +33,7 @@
       <span><input type="text" [(ngModel)]="userGet" [ngModelOptions]="{standalone: true}" (input)="onUserChange($event)"></span>
       <span>Buyer Pay</span>
       <span><input type="text" [(ngModel)]="buyerPay" [ngModelOptions]="{standalone: true}" (input)="onBuyerChange($event)"></span>
+      <button (click)="onSell()">sell</button>
     </div>
   </div>
 </div>

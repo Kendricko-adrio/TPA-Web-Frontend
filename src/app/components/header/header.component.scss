@@ -21,6 +21,7 @@ $padding: 0 10px 0 10px;
     ul {
       display: flex;
       flex-wrap: wrap;
+
       li {
         padding: 10% 20px 10% 20px;
 
@@ -33,6 +34,8 @@ $padding: 0 10px 0 10px;
       }
     }
   }
+
+
 
   .right {
     display: flex;
@@ -70,6 +73,7 @@ $padding: 0 10px 0 10px;
         }
 
       }
+
     }
 
     &-name {
@@ -121,6 +125,19 @@ $padding: 0 10px 0 10px;
       padding: 0;
       width: 32px;
       height: 32px;
+    }
+  }
+}
+
+
+@media(max-width: 425px){
+  .header{
+    //background-color: red;
+    .nav{
+      ul{
+        //display: flex;
+        flex-direction: column;
+      }
     }
   }
 }

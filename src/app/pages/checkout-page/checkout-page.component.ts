@@ -26,6 +26,7 @@ export class CheckoutPageComponent implements OnInit {
   recepient;
   gameId = [];
   isFriend = false;
+  page = false;
   ngOnInit(): void {
     this.user = UserService.userAuth;
     this.recepient = UserService.userAuth;
@@ -44,7 +45,9 @@ export class CheckoutPageComponent implements OnInit {
         this.paymentType = 2;
       }else{
         this.isEnough = true;
+        alert('you have enough money');
       }
+      this.page = true
     });
 
     this.transactionService.getAllPaymentType().subscribe(async data => {

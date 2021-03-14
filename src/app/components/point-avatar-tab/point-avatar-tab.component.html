@@ -1,0 +1,12 @@
+<div class="bg">
+  <div>
+    Purchasable Profile Border
+  </div>
+  <div class="list">
+    <div class="card" *ngFor="let b of avatar">
+      <img src="{{b.avatarUrl}}" alt="">
+      <div>Point: {{b.avatarPoint}}</div>
+      <div><Button>Buy</Button></div>
+    </div>
+  </div>
+</div>

@@ -27,6 +27,10 @@ export class GameCardComponent implements OnInit {
   }
 
   onDelete(id): void{
+    const test = confirm('apakah kamu mau mendelete?');
+    if (test === false){
+      return;
+    }
     console.log(id);
     this.gameService.deleteGame(id).subscribe(data => {
       console.log('sukses mendelete ', id);

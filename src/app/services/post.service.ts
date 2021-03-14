@@ -13,6 +13,22 @@ export class PostService {
   ) {
   }
 
+  insertPost(desc, postAsset): any{
+    return this.apollo.mutate({
+      mutation: gql `
+      mutation insertPost($desc: String! $postAsset: String!){
+  insertPost(desc: $desc, postAsset: $postAsset){
+    postId
+  }
+}
+      `,
+      variables : {
+        desc: desc,
+        postAsset: postAsset,
+      }
+    });
+  }
+
   insertReview(review, helpful, gameId): any{
     return this.apollo.mutate({
       mutation: gql `

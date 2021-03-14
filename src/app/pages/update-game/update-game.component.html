@@ -22,17 +22,17 @@
         <input type="file" accept="image/*" (change)="insertGameBanner($event)">
       </div>
       <div>Game Slide Shows</div>
-      <div class="form-component file" *ngFor="let ss of slideArr">
-        <input type="file" accept="image/*" (change)="insertGameImage($event)">
-        <img src="{{ss.slideShowUrl}}" style="width: 100px" alt="">
-      </div>
+<!--      <div class="form-component file" *ngFor="let ss of slideArr">-->
+<!--        <input type="file" accept="image/*" (change)="insertGameImage($event)">-->
+<!--        <img src="{{ss.slideShowUrl}}" style="width: 100px" alt="">-->
+<!--      </div>-->
       <div class="form-component file">
-        <input type="file" accept="image/*" (change)="insertGameImage($event)">
+        <input type="file" accept="image/*" multiple (change)="insertGameImage($event)">
       </div>
       <div class="form-component">
         <div>Game Tags</div>
-        <select name="" id="">
-          <option *ngFor="let g of genres" value="{{g.genreId}}">{{g.genreName}}</option>
+        <select name="" (change)="genreChange($event)">
+          <option *ngFor="let g of genres" value="{{g.genreId}}">{{g.genreId}}. {{g.genreName}}</option>
         </select>
       </div>
       <div class="form-component">

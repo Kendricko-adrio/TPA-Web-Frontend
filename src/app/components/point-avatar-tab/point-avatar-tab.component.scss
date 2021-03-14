@@ -1,0 +1,20 @@
+.bg{
+  padding: 20px;
+  .list{
+    display: flex;
+    flex-wrap: wrap;
+    .card{
+      width: 120px;
+      padding: 10px;
+      display: flex;
+      margin: 5px;
+      justify-content: center;
+      flex-direction: column;
+      align-content: center;
+      background-color: rgba(0,0,0,0.2);
+      img{
+        width: 100px;
+      }
+    }
+  }
+}
